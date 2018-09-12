@@ -1,3 +1,50 @@
-<p>
-  login works!
-</p>
+<!-- Aquí va ingreso de usuario -->
+<section id="registerPage">
+  <div class="container-fluid">
+    <div id="loginContainer" class="col md-6 sm-4">
+
+      <div id="loggedOut" class="col-align-self-center">
+        <div class="titles">
+          <h2>Ingresa con tu cuenta</h2>
+        </div>
+        <div class="input_container">
+          <label for="exampleInputEmail1">Email</label>
+          <input id="email" type="email" class="form-control">
+        </div>
+        <div class="input_container">
+          <label for="exampleInputPassword1">Contraseña</label>
+          <input id="password_register" type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div id="containerBtn">
+          <button id="loginBtn" class="btnBlueEnter" onclick="login()" type="button" value="LOGIN">Ingresar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Aquí termina la solicitud de ingreso con formulario -->
+
+  <div id="btnLoginWith">
+    <!-- Aquí comienza el ingreso con Facebook y Google -->
+    <p>ó</p>
+    <h5>Ingresa con</h5>
+    <div id="div_btn">
+      <button id="loginFacebookBtn" class="btn" type="button" onclick="loginFacebook()" class="btn btn-primary btn-lg">
+        <img src="../../assets/img/Facebook_loggin.svg" alt="Facebook">
+      </button>
+      <button id="loginGoogleBtn" class="btn" type="button" onclick="loginGoogle()" class="btn btn-primary btn-lg">
+        <img src="../../assets/img/Google_loggin.svg" alt="">
+      </button>
+      <!-- Aquí termina el ingreso con Facebook y Google -->
+    </div>
+    <!-- contenedor boton registrar usuario -->
+    <div id=register_container>
+      <div class="titles">
+        <h6>¿No tienes cuenta?</h6>
+      </div>
+      <div class="btn_container"></div>
+      <button id="registerBtn" class="btnBlue" type="button">Registro</button>
+    </div>
+    <!-- Aquí termina contenedor boton registrar usuario -->
+  </div>
+</section>
