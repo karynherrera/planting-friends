@@ -1,0 +1,126 @@
+/*Estilo página LogIn*/
+
+
+h1, h2, h4 {
+  text-align: center;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#logo {
+  background-color: #59A686;
+}
+
+#loggedOut {
+  margin-top: 4em;
+}
+
+.btn {
+  border-radius: 50%;
+  border-color: transparent;
+  border-width: 0px;
+  padding: 0px;
+  display: inline;
+}
+
+.btnBlue {
+  background: #00BCD4;
+  border-radius: 2px;
+  color: beige;
+}
+
+.btnBlueEnter {
+  background: #00BCD4;
+  border-radius: 2px;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  color: beige;
+}
+
+#btnLoginWith {
+  text-align: center;
+  margin-left: 0px;
+}
+
+#containerBtn {
+  text-align: center;
+}
+  
+.input_container {
+  margin-bottom: 0;
+}
+
+#div_btn {
+  width: 30%;
+  margin: auto;
+}
+
+#register_container {
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+ 
+.btn_container {
+  margin-top: 1em;
+}
+
+#logoSiembramigos {
+  background-color: #59A686;
+}
+
+#loggedOut {
+  margin-top: 4em;
+}
+
+.btn {
+  border-radius: 50%;
+  border-color: transparent;
+  border-width: 0px;
+  padding: 0px;
+  display: inline;
+}
+
+.btnBlue {
+  background: #00BCD4;
+  border-radius: 2px;
+  color: beige;
+}
+
+.btnBlueEnter {
+  background: #00BCD4;
+  border-radius: 2px;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  color: beige;
+  }
+
+#btnLoginWith {
+  text-align: center;
+  margin-left: 0px;
+  }
+
+#containerBtn {
+  text-align: center;
+  }
+  
+.input_container {
+    margin-bottom: 0;
+  }
+
+#div_btn {
+    
+    width: 30%;
+    margin: auto;
+    
+  }
+#register_container {
+margin-top: 2em;
+margin-bottom: 1em;
+}
+ 
+.btn_container {
+  margin-top: 1em;
+}
