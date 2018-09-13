@@ -9,7 +9,11 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { WelcomeComponent } from './welcome/welcome.component';
 
 import { AppComponent } from './app.component';
+
 import { RegisterFormComponent } from './register-form/register-form.component';
+
+import { AppRoutingModule } from './app-routing.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +25,8 @@ import { RegisterFormComponent } from './register-form/register-form.component';
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
