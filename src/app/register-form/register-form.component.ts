@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AngularFireDatabase, AngularFireList}from '@angular/fire/database';
 
 @Component({
   selector: 'app-register-form',
