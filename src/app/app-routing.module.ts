@@ -13,10 +13,10 @@ const app_routes: Routes=[
     path: 'login', component: LoginComponent
   },
   {
-    path: 'register', component: RegisterComponent
+    path: 'login/register', component: RegisterComponent
   },
   {
-    path: 'wall', component: WallComponent
+    path: 'login/wall', component: WallComponent
   },
   {
     path: '**', pathMatch: 'full', redirectTo: ''
