@@ -9,13 +9,15 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { WelcomeComponent } from './welcome/welcome.component';
 
 import { AppComponent } from './app.component';
+import { RegisterFormComponent } from './register-form/register-form.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
     WallComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    RegisterFormComponent
   ],
   imports: [
     BrowserModule,
