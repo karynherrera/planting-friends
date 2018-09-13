@@ -18,6 +18,7 @@ import { ReactiveFormsModule } from '@angular/forms'; //añadimos un formulario
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatButtonModule} from '@angular/material/button';
+import {MatFormFieldModule} from '@angular/material/form-field';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,8 @@ import {MatButtonModule} from '@angular/material/button';
     ReactiveFormsModule,
     MatToolbarModule,
     MatCheckboxModule,
-    MatButtonModule
+    MatButtonModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
