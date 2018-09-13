@@ -1,0 +1,50 @@
+body{
+  background-color: #A7D9A2;
+}
+.head{
+  text-align: center;
+  color: #333333;
+  background-color: #2EA681;
+  padding-left: 45%;
+}
+
+.crearCuenta{
+  text-align: center;
+  font-size: 27px;
+}
+
+.fondo{
+  text-align: center;
+  color: #333333;
+  background-color: #F2B84B;
+  padding: 5px;
+}
+
+.container{
+  left: 100px; 
+  background-color: #A7D9A2;
+}
+
+.text{
+  text-align: left;
+}
+
+form{
+  background-color: #A7D9A2;
+  padding: 15px;
+}
+
+formUser{
+  text-align: center;
+  margin: 5px;
+}
+
+p{
+  text-align: center;
+}
+.registrarse{
+  text-align: center;
+  background-color: #00BCD4;
+  color: white;
+  font-size: 15px;
+}
