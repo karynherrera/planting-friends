@@ -9,7 +9,6 @@ body{
 }
 
 .crearCuenta{
-  text-align: center;
   font-size: 27px;
 }
 
@@ -20,8 +19,7 @@ body{
   padding: 5px;
 }
 
-.container{
-  left: 100px; 
+.container{ 
   background-color: #A7D9A2;
 }
 
