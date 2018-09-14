@@ -1,3 +1,29 @@
-<p>
-  register works!
-</p>
+<body>
+<mat-toolbar class='head'> <div class='titulo'><h1 class='fondo'>
+  <img src="../../assets/img/carpa_icon.png">PlantingFriends</h1></div></mat-toolbar>
+
+<div class="container">
+  <form [formGroup]="newUser"(ngSubmit)="addMeme()"> <!--corchete input-->
+    <div class='formUser'>
+      <p class='crearCuenta'>Crea una cuenta</p>
+      <p class='text'>Nombre</p>
+      <input #nombre type='text' formControlName ="nombre">
+      <p class='text'>Edad</p>
+      <input #edad type = 'text' formControlName ="edad">
+      <p class='text'>Comuna</p>
+      <input #comuna type='text' formControlName ="comuna">
+      <p class='text'>Email</p>
+      <input #nombre type='text' formControlName ="nombre">
+      <p class='text'>Contraseña</p>
+      <input #edad type = 'text' formControlName ="edad">
+      <p class='text'>Confirmar contraseña</p>
+      <input #comuna type='text' formControlName ="comuna">
+    <br>
+    <mat-checkbox>Acepto los terminos y condiciones</mat-checkbox>
+    <br>
+    <button mat-button type="submit" class='registrarse'>Registrar!</button>
+    </div>
+  </form>
+</div>
+</body>
+
