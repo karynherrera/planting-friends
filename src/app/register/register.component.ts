@@ -10,7 +10,7 @@ import { UserAcountService } from '../user-acount.service';
 })
 export class RegisterComponent implements OnInit {
   newUser: FormGroup;
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private authService: UserAcountService) {
     this.createUser();
   }
   
@@ -23,7 +23,7 @@ export class RegisterComponent implements OnInit {
       edad: ['', Validators.required],
       comuna: ['', Validators.required],
       email: ['', Validators.compose([Validators.required, Validators.email])],
-      contraseña: ['',Validators.compose([Validators.required, Validators.minLength(4)])],
+      pass: ['',Validators.compose([Validators.required, Validators.minLength(8)])],
       confirm: ['',Validators.required],
     });
   }
@@ -31,4 +31,21 @@ export class RegisterComponent implements OnInit {
  addUser(){
   console.log();
  };
+
+ onRegister() {
+  this.authService.signup(this.newUser.value.email, this.newUser.value.pass)
+    .then(() => {
+      //Registro exitoso, celebremos esto!
+    })
+    .catch(() => {
+      console.log("nou");
+      //Algo salió mal, avisemos mejor para que reintente
+      //this.snackBar.open('Error de registro, trata otra vez'
+       // , null/*No necesitamos botón en el aviso*/
+       // , {
+       //   duration: 3000
+        //});
+    });
+}
+
 }

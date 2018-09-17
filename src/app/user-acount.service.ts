@@ -12,7 +12,8 @@ export class UserAcountService {
   constructor(private firebaseAuth: AngularFireAuth) { 
     this.user = firebaseAuth.authState;
   }
-  signup(name:string, age:number, email:string, password:string){
+  //signup(name:string, age:number, email:string, password:string){
+    signup(email:string, password:string){
     return this.firebaseAuth
       .auth
       .createUserWithEmailAndPassword(email, password);
