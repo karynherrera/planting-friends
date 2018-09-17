@@ -22,7 +22,7 @@ export class RegisterComponent implements OnInit {
       edad: ['', Validators.required],
       comuna: ['', Validators.required],
       email: ['', Validators.compose([Validators.required, Validators.email])],
-      contraseña: ['',Validators.required],
+      contraseña: ['',Validators.compose([Validators.required, Validators.minLength(4)])],
       confirm: ['',Validators.required],
     });
   }
