@@ -1,7 +1,7 @@
 //import { Component, OnInit } from '@angular/core';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UserAcountService } from '../user-acount.service';
+import { AuthService } from '../auth.service';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 
 @Component({
@@ -11,9 +11,10 @@ import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 })
 export class RegisterComponent implements OnInit {
   newUser: FormGroup;
-  newUserFirebase$: AngularFireList<any>;
-  constructor(private formBuilder: FormBuilder, private authService: UserAcountService) {
+  usersList$: AngularFireList<any>;
+  constructor(private formBuilder: FormBuilder, private authService: AuthService, private database:AngularFireDatabase) {
     this.createUser();
+    this.usersList$ = this.database.list('/users'); 
   }
   
   ngOnInit() {
@@ -30,11 +31,9 @@ export class RegisterComponent implements OnInit {
     });
   }
 
- addUser(){
-  console.log();
- };
+ 
 
- onRegister() {
+  addUser() {
   this.authService.signup(this.newUser.value.email, this.newUser.value.pass)
     .then(() => {
       //Registro exitoso, celebremos esto!

@@ -17,7 +17,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import { AuthRegisterComponent } from './register/auth-register/auth-register.component';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +26,7 @@ import { AuthRegisterComponent } from './register/auth-register/auth-register.co
     RegisterComponent,
     WallComponent,
     WelcomeComponent,
-    AuthRegisterComponent,
+    
   ],
   imports: [
     BrowserModule,
