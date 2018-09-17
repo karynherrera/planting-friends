@@ -2,6 +2,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserAcountService } from '../user-acount.service';
+import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 
 @Component({
   selector: 'app-register',
@@ -10,6 +11,7 @@ import { UserAcountService } from '../user-acount.service';
 })
 export class RegisterComponent implements OnInit {
   newUser: FormGroup;
+  newUserFirebase$: AngularFireList<any>;
   constructor(private formBuilder: FormBuilder, private authService: UserAcountService) {
     this.createUser();
   }
