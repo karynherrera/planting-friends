@@ -3,7 +3,7 @@
   <img src="../../assets/img/carpa_icon.png">PlantingFriends</h1></div></mat-toolbar>
 
 <div class="container">
-  <form [formGroup]="newUser"(ngSubmit)="addMeme()"> <!--corchete input-->
+  <form [formGroup]="newUser"(ngSubmit)="addUser()"> <!--corchete input-->
     <div class='formUser'>
       <p class='crearCuenta text'>Crea una cuenta</p>
       <p class='text'>Nombre</p>
@@ -13,11 +13,11 @@
       <p class='text'>Comuna</p>
       <input #comuna type='text' formControlName ="comuna">
       <p class='text'>Email</p>
-      <input #nombre type='text' formControlName ="nombre">
+      <input #nombre type='email' formControlName ="nombre">
       <p class='text'>Contraseña</p>
-      <input #edad type = 'text' formControlName ="edad">
+      <input #edad type = 'password' formControlName ="edad">
       <p class='text'>Confirmar contraseña</p>
-      <input #comuna type='text' formControlName ="comuna">
+      <input #comuna type='password' formControlName ="comuna">
     <br>
     <mat-checkbox>Acepto los terminos y condiciones</mat-checkbox>
     <br>

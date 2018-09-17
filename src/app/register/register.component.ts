@@ -21,11 +21,13 @@ export class RegisterComponent implements OnInit {
       nombre: ['', Validators.required],
       edad: ['', Validators.required],
       comuna: ['', Validators.required],
-      email: ['',Validators.required],
+      email: ['', Validators.compose([Validators.required, Validators.email])],
       contraseña: ['',Validators.required],
       confirm: ['',Validators.required],
     });
   }
 
- 
+ addUser(){
+  console.log();
+ };
 }

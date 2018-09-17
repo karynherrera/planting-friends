@@ -10,8 +10,6 @@ import { WelcomeComponent } from './welcome/welcome.component';
 
 import { AppComponent } from './app.component';
 
-import { RegisterFormComponent } from './register-form/register-form.component';
-
 import { AppRoutingModule } from './app-routing.module';
 
 import { ReactiveFormsModule } from '@angular/forms'; //añadimos un formulario
@@ -19,6 +17,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +25,6 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     RegisterComponent,
     WallComponent,
     WelcomeComponent,
-    RegisterFormComponent
   ],
   imports: [
     BrowserModule,
