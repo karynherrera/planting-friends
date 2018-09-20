@@ -19,6 +19,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { SingInFormComponent } from './login/sing-in-form/sing-in-form.component';
+import { SingWithFbButtonComponent } from './login/sing-with-fb-button/sing-with-fb-button.component';
+import { SingWithGButtonComponent } from './login/sing-with-g-button/sing-with-g-button.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +29,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     RegisterComponent,
     WallComponent,
     WelcomeComponent,
-    RegisterFormComponent
+    RegisterFormComponent,
+    SingInFormComponent,
+    SingWithFbButtonComponent,
+    SingWithGButtonComponent
   ],
   imports: [
     BrowserModule,

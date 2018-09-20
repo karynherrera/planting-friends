@@ -2,3 +2,10 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: 'Roboto', sans-serif; }
+
+.btn-blue{
+  text-align: center;
+  background-color: #00BCD4;
+  color: white;
+  font-size: 15px;
+}
