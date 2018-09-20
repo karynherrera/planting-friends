@@ -21,7 +21,6 @@ import { SingInFormComponent } from './login/sing-in-form/sing-in-form.component
 import { SingWithFbButtonComponent } from './login/sing-with-fb-button/sing-with-fb-button.component';
 import { SingWithGButtonComponent } from './login/sing-with-g-button/sing-with-g-button.component';
 import { AngularFireModule } from '@angular/fire';
-import { AngularFirestore } from '@angular/fire/firestore';
 
 import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/auth';
@@ -55,12 +54,8 @@ import { AuthService } from './auth.service';
     MatButtonModule,
     MatFormFieldModule,
     AngularFireModule.initializeApp(environment.firebase),
-
-    AngularFireAuthModule
-
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    AngularFirestore,
     AngularFirestoreModule.enablePersistence()
 
   ],
