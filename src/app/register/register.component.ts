@@ -16,10 +16,20 @@ export interface Item { name: string; }
 export class RegisterComponent implements OnInit {
   newUser: FormGroup;
   //usersList$: AngularFireList<any>;
+  nombre: string;
+  edad: number;
+  comuna: string;
+  email:string;
+
+  usersCollection: AngularFirestoreCollection<any>;
+  items: Observable<any[]>;
   
-  constructor(private formBuilder: FormBuilder, private authService: AuthService) {
+  constructor(private formBuilder: FormBuilder, private authService: AuthService, private afs: AngularFirestore) {
+    //private listUsers: users
     this.createUser();
     //this.usersList$ = this.database.list('/users'); 
+    this.usersCollection = afs.collection<any>('users');
+    this.items = this.usersCollection.valueChanges();
   }
   
   ngOnInit() {
@@ -42,37 +52,21 @@ export class RegisterComponent implements OnInit {
     .then((success) => {
       //Registro exitoso, celebremos esto!
       console.log(success);
-      
+     //console.log('new User'+ this.newUser.value.email);
+     // this.listUsers.addNewUser(this.newUser);
+     this.usersCollection.add({ 
+      name: this.newUser.value.nombre,
+      age: this.newUser.value.edad,
+      location: this.newUser.value.comuna,
+      mail: this.newUser.value.email,
+  
+    }).catch((err)=>{
+      console.log(err);
+    })
     })
     .catch(() => {
       console.log("nou");
     });
 }
 
-}
-export class users {
-  nombre: string;
-  edad: number;
-  comuna: string;
-  email:string;
-
-  usersCollection: AngularFirestoreCollection<Item>;
-  items: Observable<Item[]>;
-
-  constructor(private afs: AngularFirestore) {
-    this.usersCollection = afs.collection<Item>('items');
-    this.items = this.usersCollection.valueChanges();
-  }
-  addNewUser(item: Item) {
-    /*
-    this.usersCollection.doc('yourId').set({
-      nombreUsuario: this.nombre,
-      edadUsuario:this.edad,
-      comunaUser: this.comuna,
-      emailUser: this.email,
-    }).catch((err)=>{
-      console.log(err);
-    }) */
-    this.usersCollection.add(item);
-  }
 }
