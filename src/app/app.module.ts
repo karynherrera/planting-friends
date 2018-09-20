@@ -21,7 +21,7 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from "@angular/fire/database";
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore';
 import { AuthService } from './auth.service';
 
 
@@ -46,7 +46,9 @@ import { AuthService } from './auth.service';
     MatFormFieldModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    AngularFireAuthModule 
+    AngularFireAuthModule,
+    AngularFirestore,
+    AngularFirestoreModule.enablePersistence()
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
