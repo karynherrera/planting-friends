@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../auth.service';
 
 @Component({
   selector: 'app-sing-with-g-button',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SingWithGButtonComponent implements OnInit {
 
-  constructor() { }
+  constructor(public auth: AuthService) { }
 
   ngOnInit() {
   }
-
+  logout() {
+    this.auth.signOut();
+  }
 }

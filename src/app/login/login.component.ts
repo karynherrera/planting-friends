@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
+import { AuthService } from '../auth.service';
 import { SingInFormComponent } from './sing-in-form/sing-in-form.component';
 import { SingWithFbButtonComponent } from './sing-with-fb-button/sing-with-fb-button.component';
 import { SingWithGButtonComponent } from './sing-with-g-button/sing-with-g-button.component';

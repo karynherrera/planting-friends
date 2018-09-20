@@ -10,8 +10,6 @@ import { WelcomeComponent } from './welcome/welcome.component';
 
 import { AppComponent } from './app.component';
 
-import { RegisterFormComponent } from './register-form/register-form.component';
-
 import { AppRoutingModule } from './app-routing.module';
 
 import { ReactiveFormsModule } from '@angular/forms'; //añadimos un formulario
@@ -22,6 +20,15 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { SingInFormComponent } from './login/sing-in-form/sing-in-form.component';
 import { SingWithFbButtonComponent } from './login/sing-with-fb-button/sing-with-fb-button.component';
 import { SingWithGButtonComponent } from './login/sing-with-g-button/sing-with-g-button.component';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestore } from '@angular/fire/firestore';
+
+import { environment } from '../environments/environment';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AuthService } from './auth.service';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,10 +36,10 @@ import { SingWithGButtonComponent } from './login/sing-with-g-button/sing-with-g
     RegisterComponent,
     WallComponent,
     WelcomeComponent,
-    RegisterFormComponent,
     SingInFormComponent,
     SingWithFbButtonComponent,
     SingWithGButtonComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -42,9 +49,11 @@ import { SingWithGButtonComponent } from './login/sing-with-g-button/sing-with-g
     MatToolbarModule,
     MatCheckboxModule,
     MatButtonModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule
   ],
-  providers: [],
+  providers: [AuthService, AngularFirestore],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
