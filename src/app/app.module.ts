@@ -17,6 +17,12 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireDatabaseModule } from "@angular/fire/database";
+import { AuthService } from './auth.service';
+
 
 
 @NgModule({
@@ -36,9 +42,12 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatToolbarModule,
     MatCheckboxModule,
     MatButtonModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule 
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

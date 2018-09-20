@@ -1,9 +1,8 @@
-//import { Component, OnInit } from '@angular/core';
+
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '../auth.service';
-import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
-
+import {AuthService} from '../auth.service';
+import { AngularFireAuth } from '@angular/fire/auth';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -11,10 +10,11 @@ import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 })
 export class RegisterComponent implements OnInit {
   newUser: FormGroup;
-  usersList$: AngularFireList<any>;
-  constructor(private formBuilder: FormBuilder, private authService: AuthService, private database:AngularFireDatabase) {
+  //usersList$: AngularFireList<any>;
+  
+  constructor(private formBuilder: FormBuilder, private authService: AuthService) {
     this.createUser();
-    this.usersList$ = this.database.list('/users'); 
+    //this.usersList$ = this.database.list('/users'); 
   }
   
   ngOnInit() {
@@ -31,22 +31,29 @@ export class RegisterComponent implements OnInit {
     });
   }
 
- 
-
-  addUser() {
-  this.authService.signup(this.newUser.value.email, this.newUser.value.pass)
+  /*
+  addUser(){
+    console.log('purr');
+    this.afAuth.auth.createUserWithEmailAndPassword(this.newUser.value.email, this.newUser.value.pass)
     .then(() => {
       //Registro exitoso, celebremos esto!
     })
     .catch(() => {
       console.log("nou");
-      //Algo salió mal, avisemos mejor para que reintente
-      //this.snackBar.open('Error de registro, trata otra vez'
-       // , null/*No necesitamos botón en el aviso*/
-       // , {
-       //   duration: 3000
-        //});
+  });
+  } */
+  
+  addUser() {
+    //console.log('holi');
+    this.authService.register(this.newUser.value.email, this.newUser.value.pass);
+    /*
+  this.authService.register(this.newUser.value.email, this.newUser.value.pass)
+    .then(() => {
+      //Registro exitoso, celebremos esto!
+    })
+    .catch(() => {
+      console.log("nou");
     });
+*/
 }
-
 }
