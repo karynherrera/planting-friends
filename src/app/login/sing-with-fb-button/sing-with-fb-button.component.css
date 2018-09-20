@@ -1,0 +1,11 @@
+#btnLoginWith {
+  text-align: center;
+  margin-left: 0px;
+}
+.btn {
+  border-radius: 50%;
+  border-color: transparent;
+  border-width: 0px;
+  padding: 0px;
+  display: inline;
+}
