@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
+
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AngularFirestore, AngularFirestoreCollection,  } from '@angular/fire/firestore';
@@ -23,6 +24,7 @@ export class WallComponent implements OnInit {
   items: Observable<any[]>;
 
   constructor(public auth: AuthService, private formBuilder: FormBuilder, private afs: AngularFirestore, public router:Router) { 
+
     this.createPublish();
     this.publishCollection = afs.collection<any>('publications');
     this.items = this.publishCollection.valueChanges();
