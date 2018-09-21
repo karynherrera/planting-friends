@@ -8,6 +8,15 @@ import {map} from 'rxjs/operators';
   providedIn: 'root'
 })
 export class PublicacionesService {
+  publishCollection: AngularFirestoreCollection<PublishInterface>;
+  publications: Observable<PublishInterface[]>;
+  publishDoc: AngularFirestoreDocument<PublishInterface>;
 
-  constructor() { }
+  constructor(public afs: AngularFirestore) {
+    this.publications = afs.collection('publications').valueChanges();
+   }
+
+   getPublications(){
+     return this.publications;
+   }
 }
