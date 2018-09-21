@@ -1,11 +1,8 @@
-<div class="input_container">
-  <label for="exampleInputEmail1">Email</label>
-  <input id="email" type="email" class="form-control">
-</div>
-<div class="input_container">
-  <label for="exampleInputPassword1">Contraseña</label>
-  <input id="password_register" type="password" class="form-control" id="exampleInputPassword1">
-</div>
-<div id="containerBtn">
-  <button mat-button id="loginBtn" class="btn-blue" (click)="auth.login()" type="button" value="LOGIN" (click)="login()" routerLink="wall">Ingresar</button>
-</div>
+<form [formGroup]="authForm">
+  <input type="email" formControlName="email">
+  <input type="password" formControlName="password">
+  <!--Ejecutará onLogin-->
+  <button mat-button id="loginBtn" class="btn-blue" type="button" 
+  (click)="onLogin()" [disabled]="!authForm.valid"  >Ingresar</button>
+ 
+</form>

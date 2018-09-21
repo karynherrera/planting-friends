@@ -32,8 +32,7 @@ import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestor
 
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
-
-
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -60,7 +59,8 @@ import { AuthGuard } from './auth.guard';
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFirestoreModule.enablePersistence(),
-    MatCardModule
+    MatCardModule,
+    MatSnackBarModule
 
   ],
   providers: [AuthService, AngularFirestore, AuthGuard],
