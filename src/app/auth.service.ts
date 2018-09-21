@@ -14,7 +14,7 @@ interface User {
   photoURL?: string;
   displayName?: string;
   age?: number;
-}
+} 
 
 @Injectable({
   providedIn: 'root'
@@ -31,6 +31,7 @@ export class AuthService{
     ) { 
     this.user = firebaseAuth.authState;
     this.usersCollection = afs.collection<any>('test');
+
     //console.log(this.user);
   }
   
