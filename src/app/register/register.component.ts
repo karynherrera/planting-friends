@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {AuthService} from '../auth.service';
 import { RouterModule, Routes } from '@angular/router';
 import {AppRoutingModule} from '../app-routing.module';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreCollection, fromDocRef } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
 export interface Item { name: string; }
@@ -55,14 +55,15 @@ export class RegisterComponent implements OnInit {
      //console.log('new User'+ this.newUser.value.email);
      // this.listUsers.addNewUser(this.newUser);
      this.usersCollection.add({ 
-      name: this.newUser.value.nombre,
-      age: this.newUser.value.edad,
-      location: this.newUser.value.comuna,
-      mail: this.newUser.value.email,
-  
-    }).catch((err)=>{
-      console.log(err);
-    })
+        //id: DocRef.id;
+        name: this.newUser.value.nombre,
+        age: this.newUser.value.edad,
+        location: this.newUser.value.comuna,
+        mail: this.newUser.value.email,
+    
+      }).catch((err)=>{
+        console.log(err);
+      })
     })
     .catch(() => {
       console.log("nou");

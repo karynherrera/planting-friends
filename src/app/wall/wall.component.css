@@ -1,0 +1,56 @@
+body{
+  background-color: #A7D9A2;
+}
+.head{
+  text-align: center;
+  color: #333333;
+  background-color: #2EA681;
+  padding-left: 100%;
+}
+
+
+.fondo{
+  text-align: center;
+  color: #333333;
+  background-color: #F2B84B;
+  padding: 5px;
+}
+
+.container{ 
+  background-color: #A7D9A2;
+}
+
+.text{
+  text-align: left;
+}
+
+form{
+  background-color: white;
+  padding: 15px;
+}
+
+formUser{
+  text-align: center;
+  margin: 5px;
+}
+
+p{
+  text-align: center;
+}
+
+input{
+  border-radius: 10px;
+  border: none;
+  border-color: blue;
+}
+
+.prin{
+  background-color: white;
+}
+
+.registrarse{
+  text-align: center;
+  background-color: #00BCD4;
+  color: white;
+  font-size: 15px;
+}
