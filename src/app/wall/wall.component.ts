@@ -45,7 +45,7 @@ export class WallComponent implements OnInit {
   }
 
   addPublish(){
-    console.log('publicación');
+    console.log('se publicó');
     this.afAuth.authState.subscribe(user => {
       if(user) 
         this.publishCollection.add({ 
