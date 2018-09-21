@@ -30,6 +30,8 @@ body{
 form{
   background-color: #A7D9A2;
   padding: 15px;
+  position: absolute;
+  right: 35%;
 }
 
 formUser{
