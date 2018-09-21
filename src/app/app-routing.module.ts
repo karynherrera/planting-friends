@@ -5,6 +5,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { WallComponent } from './wall/wall.component';
 
+import { AuthGuard } from './auth.guard';
+
 const app_routes: Routes=[
   {
     path: '', component: WelcomeComponent
@@ -16,7 +18,7 @@ const app_routes: Routes=[
     path: 'login/register', component: RegisterComponent
   },
   {
-    path: 'login/wall', component: WallComponent
+    path: 'login/wall', component: WallComponent, canActivate: [AuthGuard]
   },
   {
     path: '**', pathMatch: 'full', redirectTo: ''

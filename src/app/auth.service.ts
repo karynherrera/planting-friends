@@ -55,6 +55,7 @@ export class AuthService{
         this.afAuth.auth
         .signInWithPopup(provider)
         .then(response => {
+          this.router.navigate(['login/wall']);
           resolve (response)
         }, err => {
           console.log(err);
@@ -69,6 +70,7 @@ export class AuthService{
         this.afAuth.auth
         .signInWithPopup(provider)
         .then(response => {
+          this.router.navigate(['login/wall']);
           resolve(response);
         }, err => {
           console.log(err);
@@ -88,6 +90,7 @@ export class AuthService{
   
     signOut() {
       this.afAuth.auth.signOut().then(() => {
+        console.log('saliste');
         this.router.navigate(['/']);
       });
     }

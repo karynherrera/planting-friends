@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../auth.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -9,12 +10,15 @@ import { AuthService } from '../../auth.service';
 })
 export class SingWithFbButtonComponent implements OnInit {
 
-  constructor(public auth: AuthService) { }
-
+  constructor(public auth: AuthService, router: Router) {
+    
+   }
+  
   ngOnInit() {
   }
+
   logout() {
     this.auth.signOut();
-  }
+  }  
 
 }
