@@ -5,9 +5,12 @@ body{
   text-align: center;
   color: #333333;
   background-color: #2EA681;
-  padding-left: 100%;
+  padding-left: 45%;
 }
 
+.crearCuenta{
+  font-size: 27px;
+}
 
 .fondo{
   text-align: center;
@@ -17,6 +20,7 @@ body{
 }
 
 .container{ 
+  text-align: center;
   background-color: #A7D9A2;
 }
 
@@ -34,23 +38,29 @@ formUser{
   margin: 5px;
 }
 
+input{
+  border-radius: 10px;
+  border-color: #A7D9A2;
+  border-style: solid;
+}
+
+
 p{
   text-align: center;
 }
-
-input{
-  border-radius: 10px;
-  border: none;
-  border-color: blue;
-}
-
-.prin{
-  background-color: white;
-}
-
-.registrarse{
+.publicar{
   text-align: center;
   background-color: #00BCD4;
   color: white;
   font-size: 15px;
+  border-radius: 10px;
+  margin-left: 5px;
+}
+
+.prin{
+  text-align: center;
+  background-color: white;
+  width: 50%;
+  border-radius: 10px;
+  margin-top: 2%;
 }

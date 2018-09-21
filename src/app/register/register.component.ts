@@ -2,7 +2,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {AuthService} from '../auth.service';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, Router } from '@angular/router';
 import {AppRoutingModule} from '../app-routing.module';
 import { AngularFirestore, AngularFirestoreCollection, fromDocRef } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
@@ -24,7 +24,7 @@ export class RegisterComponent implements OnInit {
   usersCollection: AngularFirestoreCollection<any>;
   items: Observable<any[]>;
   
-  constructor(private formBuilder: FormBuilder, private authService: AuthService, private afs: AngularFirestore) {
+  constructor(private formBuilder: FormBuilder, private authService: AuthService, private afs: AngularFirestore, public router:Router) {
     //private listUsers: users
     this.createUser();
     //this.usersList$ = this.database.list('/users'); 
@@ -51,7 +51,8 @@ export class RegisterComponent implements OnInit {
   this.authService.register(this.newUser.value.email, this.newUser.value.pass)
     .then((success) => {
       //Registro exitoso, celebremos esto!
-      console.log(success);
+     // console.log(success);
+      this.router.navigate(['login/wall']);
      //console.log('new User'+ this.newUser.value.email);
      // this.listUsers.addNewUser(this.newUser);
      this.usersCollection.add({ 
@@ -65,8 +66,8 @@ export class RegisterComponent implements OnInit {
         console.log(err);
       })
     })
-    .catch(() => {
-      console.log("nou");
+    .catch((error) => {
+      console.log("nou "+error);
     });
 }
 

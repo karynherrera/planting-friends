@@ -2,15 +2,17 @@
   <mat-toolbar class='head'> <div class='titulo'><h1 class='fondo'>
     <img src="../../assets/img/carpa_icon.png">PlantingFriends</h1></div></mat-toolbar>
   
-  <div class="container">
-    <mat-card class="prin">
-    <form [formGroup]="newPublish"(ngSubmit)="addPublish()"> <!--corchete input-->
-      <div class='formUser'>
-        <input #publicacion type='text' formControlName ="nombre" placeholder="¿Que quieres Publicar?">
-        
-      <button mat-button type="submit" class='registrarse'>Registrar!</button>
-      </div>
-    </form>
-    </mat-card>
-  </div>
+    <div class="container">
+      <mat-card class="prin">
+      <form [formGroup]="newPublish"(ngSubmit)="addPublish()"> <!--corchete input-->
+        <div class='formUser'>
+          <input #publicacion type='text' formControlName ="publicacion" placeholder="¿Que quieres Publicar?">
+          
+        <button mat-button type="submit" class='publicar'>Publicar!</button>
+        </div>
+      </form>
+      </mat-card>
+    </div>
   </body>
+  
+  
