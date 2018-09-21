@@ -43,7 +43,7 @@ export class AuthService{
   //signup(name:string, age:number, email:string, password:string){
   register(email:string, password:string){
     return this.firebaseAuth.auth.createUserWithEmailAndPassword(email, password);
-      // aqui deberia ir el push a la base de datos para crear el usuario con todos los datos que se piden en formulario
+     
   }
 
     ////// Autenticacion con metodos/////

@@ -5,6 +5,8 @@
     <button mat-button id="logOut" class="btn-blue" type="button" (click)="auth.signOut()">Log out</button>
   </mat-toolbar>
   
+    <p>Bienvenido : {{((auth.user))}}</p>
+  
     <div class="container">
       <mat-card class="prin">
       <form [formGroup]="newPublish"(ngSubmit)="addPublish()"> <!--corchete input-->
@@ -15,7 +17,8 @@
         </div>
       </form>
       </mat-card>
-    </div>
+    
+  </div>
   </body>
   
   

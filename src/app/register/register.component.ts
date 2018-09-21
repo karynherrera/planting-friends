@@ -55,7 +55,7 @@ export class RegisterComponent implements OnInit {
      //console.log('new User'+ this.newUser.value.email);
      // this.listUsers.addNewUser(this.newUser);
      this.usersCollection.add({ 
-        //id: DocRef.id;
+        //id: DocRef.name,
         name: this.newUser.value.nombre,
         age: this.newUser.value.edad,
         location: this.newUser.value.comuna,
