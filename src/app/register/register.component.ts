@@ -2,7 +2,12 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {AuthService} from '../auth.service';
-import { AngularFireAuth } from '@angular/fire/auth';
+import { RouterModule, Routes } from '@angular/router';
+import {AppRoutingModule} from '../app-routing.module';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
+
+export interface Item { name: string; }
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -31,29 +36,43 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  /*
-  addUser(){
-    console.log('purr');
-    this.afAuth.auth.createUserWithEmailAndPassword(this.newUser.value.email, this.newUser.value.pass)
-    .then(() => {
-      //Registro exitoso, celebremos esto!
-    })
-    .catch(() => {
-      console.log("nou");
-  });
-  } */
   
   addUser() {
-    //console.log('holi');
-    this.authService.register(this.newUser.value.email, this.newUser.value.pass);
-    /*
   this.authService.register(this.newUser.value.email, this.newUser.value.pass)
-    .then(() => {
+    .then((success) => {
       //Registro exitoso, celebremos esto!
+      console.log(success);
+      
     })
     .catch(() => {
       console.log("nou");
     });
-*/
 }
+
+}
+export class users {
+  nombre: string;
+  edad: number;
+  comuna: string;
+  email:string;
+
+  usersCollection: AngularFirestoreCollection<Item>;
+  items: Observable<Item[]>;
+
+  constructor(private afs: AngularFirestore) {
+    this.usersCollection = afs.collection<Item>('items');
+    this.items = this.usersCollection.valueChanges();
+  }
+  addNewUser(item: Item) {
+    /*
+    this.usersCollection.doc('yourId').set({
+      nombreUsuario: this.nombre,
+      edadUsuario:this.edad,
+      comunaUser: this.comuna,
+      emailUser: this.email,
+    }).catch((err)=>{
+      console.log(err);
+    }) */
+    this.usersCollection.add(item);
+  }
 }
