@@ -31,7 +31,7 @@ export class AuthService{
     ) { 
     this.user = firebaseAuth.authState;
     this.usersCollection = afs.collection<any>('test');
-    
+
     //console.log(this.user);
   }
   
@@ -67,6 +67,7 @@ export class AuthService{
         .signInWithPopup(provider)
         .then(response => {
           this.router.navigate(['login/wall']);
+          this.uploadUserToFirestore()
           resolve(response);
         }, err => {
           console.log(err);
@@ -86,7 +87,7 @@ export class AuthService{
         displayName: user.displayName || 'nameless user',
         photoURL: user.photoURL || 'https://goo.gl/Fz9nrQ'
     };
-    return this.usersCollection.add(data);  
+    return this.afs.collection(`users`).doc(`${user.uid}`).set(data);  
     });
   };  
     
