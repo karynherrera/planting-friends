@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+
 import { AuthService } from '../auth.service';
+
+=======
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-wall',
@@ -7,10 +12,25 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./wall.component.css']
 })
 export class WallComponent implements OnInit {
+  newPublish: FormGroup;
+
 
   constructor(public auth: AuthService) { }
 
-  ngOnInit() {
+  constructor(private formBuilder: FormBuilder, private afs: AngularFirestore) { 
+    this.createPublish();
   }
 
+
+  ngOnInit() {
+  }
+  createPublish() {
+    this.newPublish = this.formBuilder.group({
+      publicacion: ['', Validators.required],
+    });
+  }
+
+  addPublish(){
+    console.log('publicación');
+  }
 }

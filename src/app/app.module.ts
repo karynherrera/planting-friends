@@ -17,11 +17,12 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatCardModule} from '@angular/material/card';
+
 import { SingInFormComponent } from './login/sing-in-form/sing-in-form.component';
 import { SingWithFbButtonComponent } from './login/sing-with-fb-button/sing-with-fb-button.component';
 import { SingWithGButtonComponent } from './login/sing-with-g-button/sing-with-g-button.component';
 import { AngularFireModule } from '@angular/fire';
-import { AngularFirestore } from '@angular/fire/firestore';
 
 import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/auth';
@@ -56,13 +57,10 @@ import { AuthGuard } from './auth.guard';
     MatButtonModule,
     MatFormFieldModule,
     AngularFireModule.initializeApp(environment.firebase),
-
-    AngularFireAuthModule
-
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    AngularFirestore,
-    AngularFirestoreModule.enablePersistence()
+    AngularFirestoreModule.enablePersistence(),
+    MatCardModule
 
   ],
   providers: [AuthService, AngularFirestore, AuthGuard],

@@ -2,9 +2,9 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {AuthService} from '../auth.service';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, Router } from '@angular/router';
 import {AppRoutingModule} from '../app-routing.module';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreCollection, fromDocRef } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
 export interface Item { name: string; }
@@ -16,10 +16,20 @@ export interface Item { name: string; }
 export class RegisterComponent implements OnInit {
   newUser: FormGroup;
   //usersList$: AngularFireList<any>;
+  nombre: string;
+  edad: number;
+  comuna: string;
+  email:string;
+
+  usersCollection: AngularFirestoreCollection<any>;
+  items: Observable<any[]>;
   
-  constructor(private formBuilder: FormBuilder, private authService: AuthService) {
+  constructor(private formBuilder: FormBuilder, private authService: AuthService, private afs: AngularFirestore, public router:Router) {
+    //private listUsers: users
     this.createUser();
     //this.usersList$ = this.database.list('/users'); 
+    this.usersCollection = afs.collection<any>('users');
+    this.items = this.usersCollection.valueChanges();
   }
   
   ngOnInit() {
@@ -41,38 +51,24 @@ export class RegisterComponent implements OnInit {
   this.authService.register(this.newUser.value.email, this.newUser.value.pass)
     .then((success) => {
       //Registro exitoso, celebremos esto!
-      console.log(success);
-      
+     // console.log(success);
+      this.router.navigate(['login/wall']);
+     //console.log('new User'+ this.newUser.value.email);
+     // this.listUsers.addNewUser(this.newUser);
+     this.usersCollection.add({ 
+        //id: DocRef.id;
+        name: this.newUser.value.nombre,
+        age: this.newUser.value.edad,
+        location: this.newUser.value.comuna,
+        mail: this.newUser.value.email,
+    
+      }).catch((err)=>{
+        console.log(err);
+      })
     })
-    .catch(() => {
-      console.log("nou");
+    .catch((error) => {
+      console.log("nou "+error);
     });
 }
 
-}
-export class users {
-  nombre: string;
-  edad: number;
-  comuna: string;
-  email:string;
-
-  usersCollection: AngularFirestoreCollection<Item>;
-  items: Observable<Item[]>;
-
-  constructor(private afs: AngularFirestore) {
-    this.usersCollection = afs.collection<Item>('items');
-    this.items = this.usersCollection.valueChanges();
-  }
-  addNewUser(item: Item) {
-    /*
-    this.usersCollection.doc('yourId').set({
-      nombreUsuario: this.nombre,
-      edadUsuario:this.edad,
-      comunaUser: this.comuna,
-      emailUser: this.email,
-    }).catch((err)=>{
-      console.log(err);
-    }) */
-    this.usersCollection.add(item);
-  }
 }
