@@ -31,16 +31,6 @@ export class AuthService{
     ) { 
     this.user = firebaseAuth.authState;
     this.usersCollection = afs.collection<any>('test');
-    this.user = this.afAuth.authState.pipe(
-      switchMap(user => {
-        if (user) {
-          return this.afs.doc<User>(`users/${user.uid}`).valueChanges();
-        } else {
-          return of(null);
-        }
-      })
-    
-    );
     //console.log(this.user);
   }
   
@@ -51,7 +41,7 @@ export class AuthService{
   }
 
     ////// Autenticacion con metodos/////
-    googleLogin(user: User) {
+    googleLogin() {
       new Promise<any>((resolve, reject)=>{
         let provider = new firebase.auth.GoogleAuthProvider();
         provider.addScope('profile');
@@ -76,6 +66,7 @@ export class AuthService{
         .signInWithPopup(provider)
         .then(response => {
           this.router.navigate(['login/wall']);
+          this.uploadUserToFirestore()
           resolve(response);
         }, err => {
           console.log(err);
@@ -95,7 +86,7 @@ export class AuthService{
         displayName: user.displayName || 'nameless user',
         photoURL: user.photoURL || 'https://goo.gl/Fz9nrQ'
     };
-    return this.usersCollection.add(data);  
+    return this.afs.collection(`users`).doc(`${user.uid}`).set(data);  
     });
   };  
     
