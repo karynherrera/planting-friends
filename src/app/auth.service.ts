@@ -4,8 +4,9 @@ import { Observable, of } from 'rxjs';
 import { Router } from '@angular/router';
 import { AngularFireAuth} from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
-import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreDocument,  AngularFirestoreCollection } from '@angular/fire/firestore';
 import { switchMap} from 'rxjs/operators';
+
 
 interface User {
   uid: string;
@@ -14,12 +15,14 @@ interface User {
   displayName?: string;
   age?: number;
 }
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService{
   user: Observable<firebase.User>
-
+  usersCollection: AngularFirestoreCollection<any>;
+  
   constructor(
     private firebaseAuth: AngularFireAuth,
     private afAuth: AngularFireAuth,
@@ -27,6 +30,7 @@ export class AuthService{
     private router: Router
     ) { 
     this.user = firebaseAuth.authState;
+    this.usersCollection = afs.collection<any>('test');
     this.user = this.afAuth.authState.pipe(
       switchMap(user => {
         if (user) {
@@ -39,7 +43,7 @@ export class AuthService{
     );
     //console.log(this.user);
   }
-
+  
   //signup(name:string, age:number, email:string, password:string){
   register(email:string, password:string){
     return this.firebaseAuth.auth.createUserWithEmailAndPassword(email, password);
@@ -47,7 +51,7 @@ export class AuthService{
   }
 
     ////// Autenticacion con metodos/////
-    googleLogin() {
+    googleLogin(user: User) {
       new Promise<any>((resolve, reject)=>{
         let provider = new firebase.auth.GoogleAuthProvider();
         provider.addScope('profile');
@@ -55,7 +59,8 @@ export class AuthService{
         this.afAuth.auth
         .signInWithPopup(provider)
         .then(response => {
-          this.router.navigate(['login/wall']);
+          this.router.navigate(['login/wall']); 
+          this.uploadUserToFirestore()
           resolve (response)
         }, err => {
           console.log(err);
@@ -79,8 +84,20 @@ export class AuthService{
       })
     }
   
-  
-    
+  // crear coleccion 
+  uploadUserToFirestore(){
+    this.afAuth.authState.subscribe(user => {
+      if(user) 
+      console.log(user.displayName);
+      const data: User = {
+        uid: user.uid,
+        email: user.email || null,
+        displayName: user.displayName || 'nameless user',
+        photoURL: user.photoURL || 'https://goo.gl/Fz9nrQ'
+    };
+    return this.usersCollection.add(data);  
+    });
+  };  
     
     //// Email/Password Login ////
     login(email: string, password: string) {
