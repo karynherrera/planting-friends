@@ -63,4 +63,12 @@ p{
   width: 50%;
   border-radius: 10px;
   margin-top: 2%;
+  position: absolute;
+  right: 25%;
+}
+
+.btn-blue{
+  text-align: left;
+  position: absolute;
+  right: 10px;
 }

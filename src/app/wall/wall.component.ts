@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { AuthService } from '../auth.service';
 
-=======
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 
@@ -15,9 +14,9 @@ export class WallComponent implements OnInit {
   newPublish: FormGroup;
 
 
-  constructor(public auth: AuthService) { }
+  
 
-  constructor(private formBuilder: FormBuilder, private afs: AngularFirestore) { 
+  constructor(public auth: AuthService, private formBuilder: FormBuilder, private afs: AngularFirestore) { 
     this.createPublish();
   }
 
