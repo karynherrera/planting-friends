@@ -6,8 +6,6 @@ import { Router } from '@angular/router';
 import { AngularFirestore, AngularFirestoreCollection,  } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
-
-
 @Component({
   selector: 'app-wall',
   templateUrl: './wall.component.html',
@@ -15,7 +13,7 @@ import { Observable } from 'rxjs';
 })
 export class WallComponent implements OnInit {
   newPublish: FormGroup;
-  
+  newPublication: FormGroup;
   //usersList$: AngularFireList<any>;
   name: string;
   publicacion: string;
@@ -26,6 +24,7 @@ export class WallComponent implements OnInit {
   constructor(public auth: AuthService, private formBuilder: FormBuilder, private afs: AngularFirestore, public router:Router, public afAuth: AngularFireAuth,) { 
 
     this.createPublish();
+    this.publication();
     this.publishCollection = afs.collection<any>('publications');
     this.items = this.publishCollection.valueChanges();
     this.afAuth.authState.subscribe(user => {
@@ -54,8 +53,15 @@ export class WallComponent implements OnInit {
         }).catch((err)=>{
           console.log(err);
         })
-
+       
     });
     
   }
+
+  publication() {
+    this.newPublication = this.formBuilder.group({
+      publicacion: ['', Validators.required],
+    });
+  }
 }
+
