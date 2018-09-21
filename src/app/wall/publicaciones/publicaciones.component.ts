@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PublishInterface } from '../../models/publishInterface';
+import { PublicacionesService } from '../../services/publicaciones.service';
 
 @Component({
   selector: 'app-publicaciones',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PublicacionesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private pubService: PublicacionesService) { }
 
   ngOnInit() {
+    this.pubService.getPublications().subscribe(publicacion=>{
+      console.log(publicacion);
+    })
   }
 
 }
