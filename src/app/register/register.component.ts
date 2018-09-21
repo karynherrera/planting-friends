@@ -2,8 +2,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {AuthService} from '../auth.service';
-import { RouterModule, Routes, Router } from '@angular/router';
-import {AppRoutingModule} from '../app-routing.module';
+import { Router } from '@angular/router';
 import { AngularFirestore, AngularFirestoreCollection, fromDocRef } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
