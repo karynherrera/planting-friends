@@ -5,7 +5,6 @@
     <img src="../../assets/img/carpa_icon.png">PlantingFriends</h1></div>
     <button mat-button id="logOut" class="btn-blue" type="button" (click)="auth.signOut()">Log out</button>
   </mat-toolbar>
-    
     <div class="container">
       <mat-card class="prin">
       <form [formGroup]="newPublish"(ngSubmit)="addPublish()"> <!--corchete input-->
@@ -15,20 +14,11 @@
         </div>
       </form>
       </mat-card>
-    
   </div>
+  <mat-card class="areaPublicaciones">
+      <app-publicaciones></app-publicaciones>
+  </mat-card>
   </body>
-  
-  <ng-template #publicacion>
-      <mat-card class="prin">
-          <form [formGroup]="publication"> <!--corchete input-->
-            <div class='formUser'>
-             <p>{{publication}}</p>
-            </div>
-            <i class="far fa-edit"></i> <i class="fas fa-trash"></i> <i class="far fa-heart"></i>
-          </form>
-      </mat-card>
-  </ng-template>
   
   
 

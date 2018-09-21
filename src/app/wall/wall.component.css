@@ -65,6 +65,7 @@ p{
   margin-top: 2%;
   position: absolute;
   right: 25%;
+  display: block;
 }
 
 .btn-blue{
@@ -73,9 +74,13 @@ p{
   right: 10px;
 }
 
-i{
-  color:  #00BCD4;
-  margin: 10px;
-  width: 20px;
 
+
+.areaPublicaciones{
+  background-color: #A7D9A2;
+  border:none;
+  margin-top: 11%;
+  border-style: none;
+  display:block;
+  position: relative;
 }

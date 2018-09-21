@@ -32,6 +32,7 @@ import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestor
 
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
+import { PublicacionesComponent } from './wall/publicaciones/publicaciones.component';
 
 
 
@@ -44,7 +45,8 @@ import { AuthGuard } from './auth.guard';
     WelcomeComponent,
     SingInFormComponent,
     SingWithFbButtonComponent,
-    SingWithGButtonComponent
+    SingWithGButtonComponent,
+    PublicacionesComponent
     
   ],
   imports: [
