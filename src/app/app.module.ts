@@ -31,6 +31,7 @@ import { AngularFireDatabaseModule } from "@angular/fire/database";
 import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore';
 
 import { AuthService } from './auth.service';
+import { AuthGuard } from './auth.guard';
 
 
 
@@ -62,7 +63,7 @@ import { AuthService } from './auth.service';
     MatCardModule
 
   ],
-  providers: [AuthService, AngularFirestore],
+  providers: [AuthService, AngularFirestore, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
