@@ -5,7 +5,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AngularFirestore, AngularFirestoreCollection,  } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
-
+import { PublicacionesService } from '../services/publicaciones.service';
+import { PublishInterface } from '../models/publishInterface';
+import{NgForm} from '@angular/forms/src/directives/ng_form';
 @Component({
   selector: 'app-wall',
   templateUrl: './wall.component.html',
@@ -23,7 +25,7 @@ export class WallComponent implements OnInit {
   items: Observable<any[]>;
 
   constructor(public auth: AuthService, private formBuilder: FormBuilder, private afs: AngularFirestore, public router:Router, public afAuth: AngularFireAuth,) { 
-
+    
     this.createPublish();
     
     this.publishCollection = afs.collection<any>('publications');

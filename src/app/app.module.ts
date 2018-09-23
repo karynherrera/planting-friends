@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import{FormsModule} from '@angular/forms';
 
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -34,6 +35,7 @@ import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
 import { PublicacionesComponent } from './wall/publicaciones/publicaciones.component';
 import { PublicacionesService } from './services/publicaciones.service';
+import { AddPublishComponent } from './wall/add-publish/add-publish.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,8 @@ import { PublicacionesService } from './services/publicaciones.service';
     SingInFormComponent,
     SingWithFbButtonComponent,
     SingWithGButtonComponent,
-    PublicacionesComponent
+    PublicacionesComponent,
+    AddPublishComponent
     
   ],
   imports: [
@@ -62,7 +65,7 @@ import { PublicacionesService } from './services/publicaciones.service';
     AngularFireAuthModule,
     AngularFirestoreModule.enablePersistence(),
     MatCardModule,
-
+    FormsModule
   ],
   providers: [AuthService, AngularFirestore, AuthGuard, PublicacionesService],
   bootstrap: [AppComponent]
