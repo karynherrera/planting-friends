@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PublicacionesService } from '../../services/publicaciones.service';
 import { PublishInterface } from '../../models/publishInterface';
-import{FormsModule} from '@angular/forms';
 import {NgForm} from '@angular/forms/src/directives/ng_form';
 
 @Component({
@@ -24,8 +23,8 @@ export class AddPublishComponent implements OnInit {
   newPublish(myForm: NgForm) {
     let fecha = Date.now();
     this.publicacion.fecha = fecha;
-    this.pubServicio.addPublish();
-  
+    //this.pubServicio.addPublish(this.publicacion);
+    this.pubServicio.addPublish(this.publicacion);
   }
 
   
