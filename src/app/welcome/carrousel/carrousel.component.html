@@ -1,0 +1,19 @@
+<div class="container-fluid" id="divContainer">
+  <ngb-carousel *ngIf="images">
+    <ng-template ngbSlide>
+      <img [src]="images[0]" alt="first slide">
+      <div class="carousel-caption">
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <img [src]="images[1]" alt="second slide">
+      <div class="carousel-caption">
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <img [src]="images[2]" alt="third slide">
+      <div class="carousel-caption">
+      </div>
+    </ng-template>
+  </ngb-carousel>
+</div>

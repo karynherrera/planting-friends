@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+
 
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -33,6 +33,12 @@ import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestor
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { CarrouselComponent } from './welcome/carrousel/carrousel.component';
+
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
+import { NgModule} from '@angular/core';
+
 
 @NgModule({
   declarations: [
@@ -43,7 +49,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     WelcomeComponent,
     SingInFormComponent,
     SingWithFbButtonComponent,
-    SingWithGButtonComponent
+    SingWithGButtonComponent,
+    CarrouselComponent
     
   ],
   imports: [
@@ -60,10 +67,12 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     AngularFireAuthModule,
     AngularFirestoreModule.enablePersistence(),
     MatCardModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    NgbModule
 
   ],
   providers: [AuthService, AngularFirestore, AuthGuard],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  
 })
 export class AppModule { }
