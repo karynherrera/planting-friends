@@ -14,12 +14,12 @@ export class PublicacionesService {
   publishDoc: AngularFirestoreDocument<PublishInterface>;
 
   constructor(public afs: AngularFirestore) {
-    //this.publications = afs.collection('publications').valueChanges();
-    this.publishCollection = afs.collection<PublishInterface>('publications');
+    //obtenemos el id de la publicacion
+    this.publishCollection = afs.collection<PublishInterface>('publications');//aca indicmos el nombre de la coleccion
     this.publications = this.publishCollection.snapshotChanges().pipe(
       map(post => post.map(texto=>{
-        let datos = texto.payload.doc.data() as PublishInterface;
-        let id = texto.payload.doc.id;
+        const datos = texto.payload.doc.data() as PublishInterface;
+        const id = texto.payload.doc.id;
         return {id, ...datos};
       }
       ))
