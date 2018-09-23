@@ -1,0 +1,86 @@
+body{
+  background-color: #A7D9A2;
+}
+.head{
+  text-align: center;
+  color: #333333;
+  background-color: #2EA681;
+  padding-left: 45%;
+}
+
+.crearCuenta{
+  font-size: 27px;
+}
+
+.fondo{
+  text-align: center;
+  color: #333333;
+  background-color: #F2B84B;
+  padding: 5px;
+}
+
+.container{ 
+  text-align: center;
+  background-color: #A7D9A2;
+}
+
+.text{
+  text-align: left;
+}
+
+form{
+  background-color: white;
+  padding: 15px;
+}
+
+formUser{
+  text-align: center;
+  margin: 5px;
+}
+
+input{
+  border-radius: 10px;
+  border-color: #A7D9A2;
+  border-style: solid;
+}
+
+
+p{
+  text-align: center;
+}
+.publicar{
+  text-align: center;
+  background-color: #00BCD4;
+  color: white;
+  font-size: 15px;
+  border-radius: 10px;
+  margin-left: 5px;
+}
+
+.prin{
+  text-align: center;
+  background-color: white;
+  width: 50%;
+  border-radius: 10px;
+  margin-top: 2%;
+  position: absolute;
+  right: 25%;
+  display: block;
+}
+
+.btn-blue{
+  text-align: left;
+  position: absolute;
+  right: 10px;
+}
+
+
+
+.areaPublicaciones{
+  background-color: #A7D9A2;
+  border:none;
+  margin-top: 11%;
+  border-style: none;
+  display:block;
+  position: relative;
+}

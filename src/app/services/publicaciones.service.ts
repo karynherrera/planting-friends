@@ -3,7 +3,7 @@ import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument }
 import {PublishInterface} from '../models/publishInterface';
 import { Observable } from 'rxjs';
 import {map} from 'rxjs/operators';
-import { NgForm } from '@angular/forms';
+
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +14,7 @@ export class PublicacionesService {
   publishDoc: AngularFirestoreDocument<PublishInterface>;
 
   constructor(public afs: AngularFirestore) {
+    //this.publications = afs.collection('publications').valueChanges();
     //obtenemos el id de la publicacion
     this.publishCollection = afs.collection<PublishInterface>('publications');//aca indicmos el nombre de la coleccion
     this.publications = this.publishCollection.snapshotChanges().pipe(
