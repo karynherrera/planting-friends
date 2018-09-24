@@ -2,22 +2,6 @@
   font-family: 'Lobster', cursive;
 }
 
-#logoSiembramigos{
-  background-color: #0f340c;
-  text-align: center;
-  display: block;
-}
-#logoPng{
-  width: 380px;
-  height: 100px;
-  padding: 1%;
-}
-
-#containerLogo{
-  padding: 20px;
-  background-color: #59A686;
-}
-
 p{
   color: #0D5A3A;
 }

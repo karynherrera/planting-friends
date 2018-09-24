@@ -8,6 +8,24 @@ body {
   align-items: center;
 }
 
+
+#logoSiembramigos{
+  background-color: #0f340c;
+  text-align: center;
+  display: block;
+}
+#logoPng{
+  width: 380px;
+  height: 100px;
+  padding: 1%;
+}
+
+#containerLogo{
+  padding: 20px;
+  background-color: #59A686;
+}
+
+
 .btn-blue{
   text-align: center;
   background-color: #00BCD4;
