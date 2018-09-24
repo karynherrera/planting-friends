@@ -4,4 +4,5 @@ export interface PublishInterface{
   publish?: string;
   date?:any;
   photoUrl?:string;
+  likeCounter?:number;
 }

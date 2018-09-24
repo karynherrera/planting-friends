@@ -1,37 +1,80 @@
-
 <div id="cardContent" *ngIf ="posts?.length > 0">
+
   <div *ngFor ="let post of posts">
+
       <mat-card class="card">
-        <div id="date" class="row">
-          <p  >{{post.date}}</p>      
+        <div class="container-fluid topPost">
+          <div id="date" class="row">
+
+            <p  >{{post.date}}</p>      
+  
+          </div>
+  
         </div>
+        
         <div id="postMsg" class="row">
+
           <p>{{post.publish}}</p>
+
         </div>
+
         <div id="bottomInfo" class="row">
+
           <img class="profileImg" src="{{post.photoUrl}}">
+
           <p id="userName" >{{post.name}}</p>
+
+
+
           <i *ngIf="isEditPost===false" (click)="editPostNow($event,post)" class="far fa-edit"></i>
+
+
 
           <i *ngIf="isEditPost && editPost.id===post.id" (click)="clear()" class="fas fa-window-close"></i>
 
+
+
           <i (click)="deletePost($event, post)" class="fas fa-trash"></i>
-          <i class="far fa-heart"></i> 
+
+
+
+          <i *ngIf="isGiveLike===false" (click)= "updateLikes($event, post)" class="far fa-heart"> <p>{{ post.likeCounter }}</p></i> 
+
+          <i *ngIf="isGiveLike && giveLike.id===post.id" class="fas fa-smile" id="activeHeart"></i>
+
+
+
           <div *ngIf="isEditPost && editPost.id === post.id">
+
                 <form (ngSubmit)="editPublish(post)"> 
+
                     <div class='formUser'>
+
                       <input [(ngModel)]="post.publish" #publish="ngModel" type='text' name ="publish" id="publish">
+
                     <button mat-button (click)="updatePost(post)" type="submit" class='publicar'>Actualizar!</button>
+
                     </div>
+
                   </form>
+
         </div>
+
           
+
          
+
           </div> 
+
       </mat-card>
-      
-  </div>
-</div>
 
       
+
+  </div>
+
+</div>
+
+
+
       
+

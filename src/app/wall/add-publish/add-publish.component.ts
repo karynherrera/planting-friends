@@ -15,7 +15,8 @@ export class AddPublishComponent implements OnInit {
     publish: '',
     date:'',
     name:'',
-    photoUrl: ''
+    photoUrl: '',
+    likeCounter:0,
   };
 
   constructor(private pubServicio: PublicacionesService, public afAuth: AngularFireAuth) { }
