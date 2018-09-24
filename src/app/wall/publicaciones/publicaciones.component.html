@@ -1,9 +1,9 @@
 
 <div *ngIf="publications?.length > 0">
- <ul *ngFor="let post of publications" class="collection">
+ <ul *ngFor="let post of  (publications$ | async)" class="collection">
   <li >
     <mat-card class="card">
-        <p>holi</p>
+        <p>{{post.publish}}</p>
         <i class="far fa-edit"></i> <i class="fas fa-trash"></i> <i class="far fa-heart"></i> 
     </mat-card>
   </li>  
