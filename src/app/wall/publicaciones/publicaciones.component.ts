@@ -29,6 +29,7 @@ export class PublicacionesComponent implements OnInit {
 
   updatePost(post: PublishInterface){
     this.pubService.editPublish(post);
+    this.clearEdit();
   }
 
   deletePost(event, post: PublishInterface){
