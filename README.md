@@ -1,4 +1,4 @@
-<img src="/src/assets/img/new_logo2.png" width="400">
+<img src="/src/assets/img/new_logo2.png" width="1000">
 
 # Planting-Friends
 
