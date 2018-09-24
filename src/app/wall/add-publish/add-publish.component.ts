@@ -3,6 +3,7 @@ import { PublicacionesService } from '../../services/publicaciones.service';
 import { PublishInterface } from '../../models/publishInterface';
 import {NgForm} from '@angular/forms/src/directives/ng_form';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-publish',
@@ -15,7 +16,8 @@ export class AddPublishComponent implements OnInit {
     publish: '',
     date:'',
     name:'',
-    photoUrl: ''
+    photoUrl: '',
+    likeCounter: 0
   };
 
   constructor(private pubServicio: PublicacionesService, public afAuth: AngularFireAuth) { }
@@ -23,6 +25,8 @@ export class AddPublishComponent implements OnInit {
   ngOnInit() {
   }
 
+  //validar que no este vacio para postear
+ 
   newPublish(myForm: NgForm) {
     this.afAuth.authState.subscribe(user => {
       if(user){

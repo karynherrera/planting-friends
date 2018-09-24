@@ -12,6 +12,8 @@ export class PublicacionesComponent implements OnInit {
   posts: PublishInterface[]; //esto es como lo que hizo fabian con el observable
   isEditPost: Boolean = false;
   editPost: PublishInterface;
+  isGiveLike: Boolean = false;
+  giveLike: PublishInterface;
 
   constructor(public pubService: PublicacionesService) { }
 
@@ -26,7 +28,7 @@ export class PublicacionesComponent implements OnInit {
     this.isEditPost = true;
     this.editPost = post;
   }
-
+  
   updatePost(post: PublishInterface){
     this.pubService.editPublish(post);
     this.clear();
@@ -34,7 +36,17 @@ export class PublicacionesComponent implements OnInit {
 
   deletePost(event, post: PublishInterface){
     this.pubService.deletePublish(post);
-    this.clear;
+    this.clear();
+  }
+  
+  // actualiza el nuevo estado 
+  giveLikeNow(event, post: PublishInterface){
+    this.isGiveLike = true;
+    this.giveLike = post;
+  }
+  updateLikes(event, post: PublishInterface){ 
+    this.pubService.giveLike(post);
+    this.clear();
   }
 
   clear(){
