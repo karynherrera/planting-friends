@@ -1,13 +1,11 @@
 
-<div>
- <ul class="collection">
-
-    <mat-card class="card">
-        <p>holii</p>
-        <i class="far fa-edit"></i> <i class="fas fa-trash"></i> <i class="far fa-heart"></i> 
-    </mat-card>
- 
- </ul>
+<div *ngIf ="posts?.length > 0">
+  <div *ngFor ="let post of posts">
+      <mat-card class="card">
+          <p>{{post.publish}}</p>
+          <i class="far fa-edit"></i> <i class="fas fa-trash"></i> <i class="far fa-heart"></i> 
+      </mat-card>
+  </div>
 </div>
       
       

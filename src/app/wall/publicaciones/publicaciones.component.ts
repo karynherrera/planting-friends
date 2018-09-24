@@ -9,11 +9,14 @@ import { PublicacionesService } from '../../services/publicaciones.service';
   styleUrls: ['./publicaciones.component.css']
 })
 export class PublicacionesComponent implements OnInit {
+  posts: PublishInterface[];
+
   constructor(public pubService: PublicacionesService) { }
 
   ngOnInit() {
     this.pubService.getPublications().subscribe(publicacion=>{
       console.log(publicacion);
+      this.posts = publicacion;
     })
   }
 
