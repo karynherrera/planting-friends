@@ -2,9 +2,9 @@
 
 # Planting-Friends
 
-_Nuestra aplicación es una red social enfocada en el cuidado del medio ambiente, y está basada en la creciente necesidad que se ha generado en la sociedad para cuidar el planeta.
+Nuestra aplicación es una red social enfocada en el cuidado del medio ambiente, y está basada en la creciente necesidad que se ha generado en la sociedad para cuidar el planeta.
 
-El objetivo principal de esta aplicación es que aquellas personas que tengan interés en temas medioambientales puedan conocer a más gente que comparta sus mismos intereses, y se puedan generar instancias para compartir información, y así se puedan reunir y realizar actividades para generar conciencia en su entorno, ya sea que estén recién iniciandose en este tema, como también puede que tengan profesiones afines y que quieran aportar hacia la sociedad con su conocimiento en distintos temas como desarrollo de huertos urbanos, agricultura orgánica, compostaje, lombricultura, reciclaje, energías renovables, calentamiento global, etc ._
+El objetivo principal de esta aplicación es que aquellas personas que tengan interés en temas medioambientales puedan conocer a más gente que comparta sus mismos intereses, y se puedan generar instancias para compartir información, y así se puedan reunir y realizar actividades para generar conciencia en su entorno, ya sea que estén recién iniciandose en este tema, como también puede que tengan profesiones afines y que quieran aportar hacia la sociedad con su conocimiento en distintos temas como desarrollo de huertos urbanos, agricultura orgánica, compostaje, lombricultura, reciclaje, energías renovables, calentamiento global, etc .
 
 [link a DEMO](https://plantingfriends.firebaseapp.com/)
 
@@ -16,7 +16,7 @@ Como tecnología de almacenamiento de datos usamos Firebase de Google, el cual n
 
 ### Pre-requisitos 📋
 
-_Si quieres contribuir con este proyecto en su desarrollo debes clonar este repositorio en alguna carpeta en tu computadora, asegurate de tener instalado NodeJS / Npm.  
+Si quieres contribuir con este proyecto en su desarrollo debes clonar este repositorio en alguna carpeta en tu computadora, asegurate de tener instalado NodeJS / Npm.  
 
 ```
 
