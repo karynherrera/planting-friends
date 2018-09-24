@@ -30,3 +30,18 @@ i{
   padding-bottom: 3%;
   margin-top: 18%;
 }
+
+.publicar{
+  text-align: center;
+  background-color: #00BCD4;
+  color: white;
+  font-size: 15px;
+  border-radius: 10px;
+  margin-left: 5px;
+}
+
+input{
+  border-radius: 10px;
+  border-color: #A7D9A2;
+  border-style: solid;
+}
