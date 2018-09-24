@@ -9,9 +9,9 @@
           <i class="fas fa-trash"></i>
           <i class="far fa-heart"></i>
           <div *ngIf="isEditPost && editPost.id === post.id">
-              <form (ngSubmit)="editPublish(post)" #formNew="ngForm" > 
+              <form (ngSubmit)="editPublish(post)"> 
                   <div class='formUser'>
-                    <input [(ngModel)]="publicacion.publish" #publish="ngModel" type='text' name ="publish" id="publish" placeholder= {{post.publish}}>
+                    <input [(ngModel)]="post.publish" #publish="ngModel" type='text' name ="publish" id="publish">
                   <button mat-button type="submit" class='publicar'>Publicar!</button>
                   </div>
                 </form>
