@@ -1,32 +1,5 @@
-body {
-  background-color: #A7D9A2;
-  align-items: center;
-}
-/*DISPLAY*/
-#landingPage {
-  display: block;
-}
-#registerPage {
-  display: none;
-}
-#formRegisterPage {
-  display: none;
-}
-
-#loggedHomePage {
-  display: none;
-}
-
-#logoSiembramigos{
-  background-color: #F2B84B;
-  text-align: center;
-  font-family: roboto;
-  display: block;
-}
-
-#containerLogo{
-  padding: 20px;
-  background-color: #59A686;
+.Title{
+  font-family: 'Lobster', cursive;
 }
 
 p{
@@ -48,9 +21,12 @@ h4{
 
 #btn-entrar {
   margin-bottom: 5%;
-  background-color: #F2B84B;
   color: red;
   font-weight: bold;
-  border: none;
-  padding: 15px;
+  
+}
+#divContainer{
+  max-width: 100%;
+  max-height: 700px;
+  padding: 0px;
 }

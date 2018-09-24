@@ -1,7 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: 'Roboto', sans-serif; }
+body { 
+  margin: 0; 
+  font-family: 'Roboto', sans-serif; 
+  background-color: #A7D9A2;
+  align-items: center;
+}
+
+
+#logoSiembramigos{
+  background-color: #0f340c;
+  text-align: center;
+  display: block;
+}
+#logoPng{
+  width: 380px;
+  height: 100px;
+  padding: 1%;
+}
+
+#containerLogo{
+  padding: 20px;
+  background-color: #59A686;
+}
+
 
 .btn-blue{
   text-align: center;

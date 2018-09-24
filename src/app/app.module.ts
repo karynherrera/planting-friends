@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+
 import { NgModule } from '@angular/core';
 import{FormsModule} from '@angular/forms';
 
@@ -33,6 +34,11 @@ import { AngularFireModule } from '@angular/fire';
 
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { CarrouselComponent } from './welcome/carrousel/carrousel.component';
+
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 import { PublicacionesComponent } from './wall/publicaciones/publicaciones.component';
 import { PublicacionesService } from './services/publicaciones.service';
 import { AddPublishComponent } from './wall/add-publish/add-publish.component';
@@ -47,6 +53,7 @@ import { AddPublishComponent } from './wall/add-publish/add-publish.component';
     SingInFormComponent,
     SingWithFbButtonComponent,
     SingWithGButtonComponent,
+    CarrouselComponent,
     PublicacionesComponent,
     AddPublishComponent
     
@@ -65,7 +72,10 @@ import { AddPublishComponent } from './wall/add-publish/add-publish.component';
     AngularFireAuthModule,
     AngularFirestoreModule.enablePersistence(),
     MatCardModule,
+    MatSnackBarModule,
+    NgbModule,
     FormsModule
+
   ],
   providers: [AuthService, AngularFirestore, AuthGuard, PublicacionesService],
   bootstrap: [AppComponent]
