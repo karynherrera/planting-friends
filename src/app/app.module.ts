@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 
+import { NgModule } from '@angular/core';
+import{FormsModule} from '@angular/forms';
 
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -22,13 +24,13 @@ import {MatCardModule} from '@angular/material/card';
 import { SingInFormComponent } from './login/sing-in-form/sing-in-form.component';
 import { SingWithFbButtonComponent } from './login/sing-with-fb-button/sing-with-fb-button.component';
 import { SingWithGButtonComponent } from './login/sing-with-g-button/sing-with-g-button.component';
-import { AngularFireModule } from '@angular/fire';
+
 
 import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-
 import { AngularFireDatabaseModule } from "@angular/fire/database";
 import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire';
 
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
@@ -37,8 +39,9 @@ import { CarrouselComponent } from './welcome/carrousel/carrousel.component';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
-import { NgModule} from '@angular/core';
-
+import { PublicacionesComponent } from './wall/publicaciones/publicaciones.component';
+import { PublicacionesService } from './services/publicaciones.service';
+import { AddPublishComponent } from './wall/add-publish/add-publish.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +53,9 @@ import { NgModule} from '@angular/core';
     SingInFormComponent,
     SingWithFbButtonComponent,
     SingWithGButtonComponent,
-    CarrouselComponent
+    CarrouselComponent,
+    PublicacionesComponent,
+    AddPublishComponent
     
   ],
   imports: [
@@ -68,11 +73,11 @@ import { NgModule} from '@angular/core';
     AngularFirestoreModule.enablePersistence(),
     MatCardModule,
     MatSnackBarModule,
-    NgbModule
+    NgbModule,
+    FormsModule
 
   ],
-  providers: [AuthService, AngularFirestore, AuthGuard],
-  bootstrap: [AppComponent],
-  
+  providers: [AuthService, AngularFirestore, AuthGuard, PublicacionesService],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

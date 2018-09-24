@@ -1,27 +1,16 @@
-body {
-  background-color: #A7D9A2;
-  align-items: center;
-}
-/*DISPLAY*/
-#landingPage {
-  display: block;
-}
-#registerPage {
-  display: none;
-}
-#formRegisterPage {
-  display: none;
-}
-
-#loggedHomePage {
-  display: none;
+.Title{
+  font-family: 'Lobster', cursive;
 }
 
 #logoSiembramigos{
-  background-color: #F2B84B;
+  background-color: #0f340c;
   text-align: center;
-  font-family: roboto;
   display: block;
+}
+#logoPng{
+  width: 380px;
+  height: 100px;
+  padding: 1%;
 }
 
 #containerLogo{
@@ -48,9 +37,12 @@ h4{
 
 #btn-entrar {
   margin-bottom: 5%;
-  background-color: #F2B84B;
   color: red;
   font-weight: bold;
-  border: none;
-  padding: 15px;
+  
+}
+#divContainer{
+  max-width: 100%;
+  max-height: 700px;
+  padding: 0px;
 }

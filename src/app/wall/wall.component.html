@@ -1,23 +1,16 @@
-
-
 <body>
   <mat-toolbar class='head'> <div class='titulo'><h1 class='fondo'>
     <img src="../../assets/img/carpa_icon.png">PlantingFriends</h1></div>
     <button mat-button id="logOut" class="btn-blue" type="button" (click)="auth.signOut()">Log out</button>
   </mat-toolbar>
-  
     <div class="container">
-      <mat-card class="prin">
-      <form [formGroup]="newPublish"(ngSubmit)="addPublish()"> <!--corchete input-->
-        <div class='formUser'>
-          <input #publicacion type='text' formControlName ="publicacion" placeholder="¿Que quieres Publicar?">
-          
-        <button mat-button type="submit" class='publicar'>Publicar!</button>
-        </div>
-      </form>
-      </mat-card>
-    
+        <mat-card class="prin">
+      <app-add-publish></app-add-publish>
+    </mat-card>
   </div>
+  <mat-card class="areaPublicaciones">
+      <app-publicaciones></app-publicaciones>
+  </mat-card>
   </body>
   
   

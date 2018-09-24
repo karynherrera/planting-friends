@@ -1,0 +1,7 @@
+  
+  <form (ngSubmit)="newPublish(formNew)" #formNew="ngForm" > 
+    <div class='formUser'>
+      <input [(ngModel)]="publicacion.publish" #publish="ngModel" type='text' name ="publish" id="publish" placeholder="¿Que quieres Publicar?">
+    <button mat-button type="submit" class='publicar'>Publicar!</button>
+    </div>
+  </form>
