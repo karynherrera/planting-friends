@@ -1,6 +1,7 @@
-#btnLoginWith {
+#loginFacebookBtn {
   text-align: center;
   margin-left: 0px;
+  margin-right: 10%;
 }
 .btn {
   border-radius: 50%;

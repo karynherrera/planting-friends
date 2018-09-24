@@ -10,27 +10,28 @@
         <app-sing-in-form></app-sing-in-form>
         <!-- solicitud de ingreso con formulario -->
       </div>
-    </div>
-  </div>
-
-  <!-- Aquí comienza el ingreso con Facebook y Google -->
-  <div id="btnLoginWith">
-    <p>ó</p>      
-    <h4>Ingresa con</h4>
-    <div id="div_btn">
-      <!--boton de facebook-->
-      <app-sing-with-fb-button></app-sing-with-fb-button>
-     <!--boton de google-->
-     <app-sing-with-g-button></app-sing-with-g-button>
-    </div> <!-- Aquí termina el ingreso con Facebook y Google -->
-    <!-- contenedor boton registrar usuario -->
-    <div id=register_container>
-      <div class="titles">
-        <h4>¿No tienes cuenta?</h4>
+       <!-- Aquí comienza el ingreso con Facebook y Google -->
+      <div id="btnLoginWith">
+       
+        <h4>Ingresa con</h4>
+        <div id="div_btn">
+          <!--boton de facebook-->
+          <app-sing-with-fb-button></app-sing-with-fb-button>
+        <!--boton de google-->
+        <app-sing-with-g-button></app-sing-with-g-button>
+        </div> <!-- Aquí termina el ingreso con Facebook y Google -->
+        <!-- contenedor boton registrar usuario -->
+        <div id=register_container>
+          <div class="titles">
+            <h4>¿No tienes cuenta?</h4>
+          </div>
+          <div class="btn_container">
+            <button mat-button id="registerBtn" class="btn-blue" type="button" routerLink="register">Registro</button>
+          </div>
+        </div>
+      <!-- Aquí termina contenedor boton registrar usuario -->
       </div>
-      <div class="btn_container"></div>
-      <button mat-button id="registerBtn" class="btn-blue" type="button" routerLink="register">Registro</button>
+
     </div>
-    <!-- Aquí termina contenedor boton registrar usuario -->
   </div>
 </section>
