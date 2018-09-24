@@ -11,12 +11,16 @@
         <div id="bottomInfo" class="row">
           <img class="profileImg" src="{{post.photoUrl}}">
           <p id="userName" >{{post.name}}</p>
+
           <i *ngIf="isEditPost===false" (click)="editPostNow($event,post)" class="far fa-edit"></i>
 
           <i *ngIf="isEditPost && editPost.id===post.id" (click)="clear()" class="fas fa-window-close"></i>
 
           <i (click)="deletePost($event, post)" class="fas fa-trash"></i>
-          <i class="far fa-heart"></i> 
+
+          <i *ngIf="isGiveLike===false" (click)= "updateLikes($event, post)" class="far fa-heart"> <p>{{ post.likeCounter }}</p></i> 
+          <i *ngIf="isGiveLike && giveLike.id===post.id" (click)="clear()" class="far fa-heart"></i>
+
           <div *ngIf="isEditPost && editPost.id === post.id">
                 <form (ngSubmit)="editPublish(post)"> 
                     <div class='formUser'>

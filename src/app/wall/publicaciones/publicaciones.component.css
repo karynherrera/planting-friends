@@ -1,8 +1,12 @@
 i{
-  color:  #00BCD4;
+  color: #00BCD4;
   margin: 10px;
-  width: 20px;
+  width: 50px;
+  display: inline-flex;
   margin-bottom: 20px;
+  margin-right: 5%;
+  margin-left: 5%;
+
 }
 
 .fa-edit{
@@ -21,7 +25,7 @@ i{
 }
 .fa-heart{
   position: absolute;
-  right: 8%;
+  right: 10%;
 }
 
 .card{
@@ -76,8 +80,6 @@ i{
   color: green;
   font-family: 'Lobster', cursive;
   font-size: large;
-  padding-bottom: 3%;
-  margin-top: 18%;
 }
 
 .publicar{
@@ -87,6 +89,7 @@ i{
   font-size: 15px;
   border-radius: 10px;
   margin-left: 5px;
+  margin-top: 5%;
 }
 
 input{

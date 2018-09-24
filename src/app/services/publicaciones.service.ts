@@ -12,7 +12,7 @@ export class PublicacionesService {
   publishCollection: AngularFirestoreCollection<PublishInterface>;
   publications: Observable<PublishInterface[]>;
   publishDoc: AngularFirestoreDocument<PublishInterface>;
-
+  counter: number;
   constructor(public afs: AngularFirestore) {
     //this.publications = afs.collection('publications').valueChanges();
     //obtenemos el id de la publicacion
@@ -32,19 +32,26 @@ export class PublicacionesService {
    }
 
    addPublish(publicacion: PublishInterface){
-    console.log('se publicó');
+    // console.log('se publicó');
     this.publishCollection.add(publicacion);
   }
 
   deletePublish(publicacion: PublishInterface){
-    console.log('delete publicacion');
+    // console.log('delete publicacion');
     this.publishDoc = this.afs.doc(`publications/${publicacion.id}`);
     this.publishDoc.delete();
   }
 
   editPublish(publicacion: PublishInterface){
-    console.log('edit publicacion');
+    // console.log('edit publicacion');
     this.publishDoc=this.afs.doc(`publications/${publicacion.id}`);
+    this.publishDoc.update(publicacion);
+  }
+
+  giveLike(publicacion: PublishInterface){
+    this.publishDoc=this.afs.doc(`publications/${publicacion.id}`);
+    publicacion.likeCounter = publicacion.likeCounter +1;
+    // console.log(JSON.stringify(publicacion));
     this.publishDoc.update(publicacion);
   }
 }

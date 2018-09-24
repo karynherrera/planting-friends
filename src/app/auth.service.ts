@@ -79,15 +79,16 @@ export class AuthService{
   // crear coleccion 
   uploadUserToFirestore(){
     this.afAuth.authState.subscribe(user => {
-      if(user) 
-      console.log(user.displayName);
-      const data: User = {
-        uid: user.uid,
-        email: user.email || null,
-        displayName: user.displayName || 'nameless user',
-        photoURL: user.photoURL || 'https://goo.gl/Fz9nrQ'
+      if(user) {
+        // console.log(user.displayName);  
+        const data: User = {
+          uid: user.uid,
+          email: user.email || null,
+          displayName: user.displayName || 'nameless user',
+          photoURL: user.photoURL || 'https://goo.gl/Fz9nrQ'
+      }
+      return this.afs.collection(`users`).doc(`${user.uid}`).set(data);  
     };
-    return this.afs.collection(`users`).doc(`${user.uid}`).set(data);  
     });
   };  
     
@@ -99,7 +100,7 @@ export class AuthService{
   
     signOut() {
       this.afAuth.auth.signOut().then(() => {
-        console.log('saliste');
+        // console.log('saliste');
         this.router.navigate(['/']);
       });
     }
