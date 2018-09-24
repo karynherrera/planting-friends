@@ -1,28 +1,32 @@
-<body>
+<body class="">
 
 
-<div class="container">
-  <form [formGroup]="newUser"(ngSubmit)="addUser()"> <!--corchete input-->
-    <div class='formUser'>
-      <p class='crearCuenta text'>Crea una cuenta</p>
-      <p class='text'>Nombre</p>
-      <input #nombre type='text' formControlName ="nombre">
-      <p class='text'>Edad</p>
-      <input #edad type = 'text' formControlName ="edad">
-      <p class='text'>Comuna</p>
-      <input #comuna type='text' formControlName ="comuna">
-      <p class='text'>Email</p>
-      <input #email type='email' formControlName ="email">
-      <p class='text'>Contraseña</p>
-      <input #pass type = 'password' formControlName ="pass">
-      <p class='text'>Confirmar contraseña</p>
-      <input #confirm type='password' formControlName ="confirm">
-    <br>
-    <mat-checkbox>Acepto los terminos y condiciones</mat-checkbox>
-    <br>
-    <button mat-button type="submit" class='registrarse'>Registrar!</button>
-    </div>
-  </form>
+<div class="container-fluid col-12 ">
+  <section  id="form_section" class="col-sm-8 col-md-6 col-lg-4">
+    <form [formGroup]="newUser"(ngSubmit)="addUser()"> <!--corchete input-->
+      <div class='formUser'>
+        <p id="title" class='crearCuenta'>Crea una cuenta</p>
+        <div>
+          <p class='text input_titles'>Nombre</p>
+          <input #nombre class="input_place" type='text' formControlName ="nombre">
+          <p class='text input_titles'>Edad</p>
+          <input #edad type = 'text'  class="input_place" formControlName ="edad">
+          <p class='text input_titles'>Comuna</p>
+          <input #comuna type='text'  class="input_place" formControlName ="comuna">
+          <p class='text input_titles'>Email</p>
+          <input #email type='email'  class="input_place" formControlName ="email">
+          <p class='text input_titles'>Contraseña</p>
+          <input #pass type = 'password'  class="input_place" formControlName ="pass">
+          <p class='text input_titles'>Confirmar contraseña</p>
+          <input #confirm type='password'  class="input_place" formControlName ="confirm">
+        </div>
+      <br>
+      <mat-checkbox>Acepto los terminos y condiciones</mat-checkbox>
+      <br>
+      <button mat-button type="submit" class='registrarse'>Registrar!</button>
+      </div>
+    </form>
+  </section>
 </div>
 </body>
 
