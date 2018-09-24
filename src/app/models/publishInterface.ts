@@ -1,6 +1,7 @@
 export interface PublishInterface{
   id?:string;
-  user?:string;
+  name?:string;
   publish?: string;
   date?:any;
+  photoUrl?:string;
 }
