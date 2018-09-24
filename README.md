@@ -58,7 +58,7 @@ Usa esta red para publicar información interesante para otras personas que quie
 
 Esta app esta diseñada para ser una red social muy completa, como próximas implementaciones planeamos ofrecer un servicio de informaciones, perfil de usuario y chat.
 
-<img src="./assets/img/esquema.png" alt="Commercial Photography">
+<img src="/src/assets/img/esquema.png">
 
 **Visita nuestro prototipo navegable aqui**
 
