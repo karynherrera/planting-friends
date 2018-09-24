@@ -29,6 +29,7 @@ p {
 #div_btn {
   width: 30%;
   margin: auto;
+  text-align: center;
 }
 
 #register_container {
@@ -36,10 +37,11 @@ p {
   margin-bottom: 1em;
 }
  
-.btn_container {
+.btn_container{
   margin-top: 1em;
+  margin-bottom: 2em;
+  text-align: center;
 }
-
 #logoSiembramigos {
   background-color: #59A686;
 }
