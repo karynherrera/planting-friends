@@ -1,4 +1,5 @@
-<img src="/src/assets/img/new_logo2.png">
+<img src="/src/assets/img/new_logo2.png" width="400">
+
 # Planting-Friends
 
 _Nuestra aplicación es una red social enfocada en el cuidado del medio ambiente, y está basada en la creciente necesidad que se ha generado en la sociedad para cuidar el planeta.
