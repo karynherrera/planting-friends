@@ -10,6 +10,11 @@ i{
   right: 5%;
 }
 
+.fa-window-close{
+  position: absolute;
+  right: 5%;
+}
+
 .fa-trash{
   position: absolute;
   right: 2%;

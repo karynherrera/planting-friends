@@ -9,7 +9,9 @@ import { PublicacionesService } from '../../services/publicaciones.service';
   styleUrls: ['./publicaciones.component.css']
 })
 export class PublicacionesComponent implements OnInit {
-  posts: PublishInterface[];
+  posts: PublishInterface[]; //esto es como lo que hizo fabian con el observable
+  isEditPost: Boolean = false;
+  editPost: PublishInterface;
 
   constructor(public pubService: PublicacionesService) { }
 
