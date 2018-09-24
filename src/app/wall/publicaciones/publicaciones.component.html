@@ -12,7 +12,9 @@
           <img class="profileImg" src="{{post.photoUrl}}">
           <p id="userName" >{{post.name}}</p>
           <i *ngIf="isEditPost===false" (click)="editPostNow($event,post)" class="far fa-edit"></i>
-          <i *ngIf="isEditPost && editPost.id===post.id" (click)="clearEdit()" class="fas fa-window-close"></i>         
+
+          <i *ngIf="isEditPost && editPost.id===post.id" (click)="clear()" class="fas fa-window-close"></i>
+
           <i (click)="deletePost($event, post)" class="fas fa-trash"></i>
           <i class="far fa-heart"></i> 
           <div *ngIf="isEditPost && editPost.id === post.id">
