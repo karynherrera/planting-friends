@@ -22,4 +22,14 @@ export class PublicacionesComponent implements OnInit {
     })
   }
 
+  editPostNow(event, post: PublishInterface){
+    this.isEditPost = true;
+    this.editPost = post;
+  }
+
+  clearEdit(){
+    this.isEditPost = false;
+    this.editPost = null;
+  }
+
 }

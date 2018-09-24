@@ -4,12 +4,22 @@
       <mat-card class="card">
           <p>{{post.publish}}</p>
           <p>{{post.date}}</p>
-          <i class="far fa-edit"></i>
-          
+          <i *ngIf="isEditPost===false" (click)="editPostNow($event,post)" class="far fa-edit"></i>
+          <i *ngIf="isEditPost && editPost.id===post.id" (click)="clearEdit()" class="fas fa-window-close"></i>
           <i class="fas fa-trash"></i>
-          <i class="far fa-heart"></i> 
+          <i class="far fa-heart"></i>
+          <div *ngIf="isEditPost && editPost.id === post.id">
+              <form (ngSubmit)="editPublish(post)" #formNew="ngForm" > 
+                  <div class='formUser'>
+                    <input [(ngModel)]="publicacion.publish" #publish="ngModel" type='text' name ="publish" id="publish" placeholder= {{post.publish}}>
+                  <button mat-button type="submit" class='publicar'>Publicar!</button>
+                  </div>
+                </form>
+          </div> 
       </mat-card>
+      
   </div>
 </div>
+
       
       
