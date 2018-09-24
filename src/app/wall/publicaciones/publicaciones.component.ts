@@ -25,16 +25,10 @@ export class PublicacionesComponent implements OnInit {
   isEditPost: Boolean = false;
 
   editPost: PublishInterface;
-
   isGiveLike: Boolean = false;
-
   giveLike: PublishInterface;
 
-
-
   constructor(public pubService: PublicacionesService) { }
-
-
 
   ngOnInit() {
 
@@ -57,9 +51,7 @@ export class PublicacionesComponent implements OnInit {
     this.editPost = post;
 
   }
-
   
-
   updatePost(post: PublishInterface){
 
     this.pubService.editPublish(post);
@@ -73,31 +65,18 @@ export class PublicacionesComponent implements OnInit {
   deletePost(event, post: PublishInterface){
 
     this.pubService.deletePublish(post);
-
     this.clear();
-
   }
-
   
-
   // actualiza el nuevo estado 
-
   giveLikeNow(event, post: PublishInterface){
-
     this.isGiveLike = true;
-
     this.giveLike = post;
-
   }
-
   updateLikes(event, post: PublishInterface){ 
-
     this.pubService.giveLike(post);
-
-    
-
+    this.clear();
   }
-
 
 
   clear(){
