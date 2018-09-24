@@ -36,11 +36,13 @@ export class PublicacionesService {
     this.publishCollection.add(publicacion);
   }
 
-  deletePublish(){
+  deletePublish(publicacion: PublishInterface){
     console.log('delete publicacion');
   }
 
-  editPublish(){
+  editPublish(publicacion: PublishInterface){
     console.log('edit publicacion');
+    this.publishDoc=this.afs.doc(`publications/${publicacion.id}`);
+    this.publishDoc.update(publicacion);
   }
 }

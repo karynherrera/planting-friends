@@ -27,6 +27,14 @@ export class PublicacionesComponent implements OnInit {
     this.editPost = post;
   }
 
+  updatePost(post: PublishInterface){
+    this.pubService.editPublish(post);
+  }
+
+  deletePost(event, post: PublishInterface){
+ 
+  }
+
   clearEdit(){
     this.isEditPost = false;
     this.editPost = null;

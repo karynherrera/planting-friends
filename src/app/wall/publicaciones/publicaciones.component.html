@@ -6,13 +6,13 @@
           <p>{{post.date}}</p>
           <i *ngIf="isEditPost===false" (click)="editPostNow($event,post)" class="far fa-edit"></i>
           <i *ngIf="isEditPost && editPost.id===post.id" (click)="clearEdit()" class="fas fa-window-close"></i>
-          <i class="fas fa-trash"></i>
+          <i (click)="deletePost($event, post)" class="fas fa-trash"></i>
           <i class="far fa-heart"></i>
           <div *ngIf="isEditPost && editPost.id === post.id">
               <form (ngSubmit)="editPublish(post)"> 
                   <div class='formUser'>
                     <input [(ngModel)]="post.publish" #publish="ngModel" type='text' name ="publish" id="publish">
-                  <button mat-button type="submit" class='publicar'>Actualizar!</button>
+                  <button mat-button (click)="updatePost(post)" type="submit" class='publicar'>Actualizar!</button>
                   </div>
                 </form>
           </div> 
