@@ -9,9 +9,7 @@ import { PublicacionesService } from '../../services/publicaciones.service';
   styleUrls: ['./publicaciones.component.css']
 })
 export class PublicacionesComponent implements OnInit {
-
-
-  constructor(private pubService: PublicacionesService) { }
+  constructor(public pubService: PublicacionesService) { }
 
   ngOnInit() {
     this.pubService.getPublications().subscribe(publicacion=>{
