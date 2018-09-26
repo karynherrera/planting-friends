@@ -1,17 +1,17 @@
 i{
   color: #00BCD4;
   margin: 10px;
-  width: 50px;
   display: inline-flex;
   margin-bottom: 20px;
-  margin-right: 5%;
-  margin-left: 5%;
-
 }
 
 .fa-edit{
   position: absolute;
-  right: 5%;
+  right: 6%;
+}
+
+#activeHeart{
+  color: red;
 }
 
 .fa-window-close{
@@ -46,7 +46,7 @@ i{
   border-color: transparent;
   border-width: 0px;
   padding: 0px;
-  
+  margin-left: 5%;
 }
 
 #date{
@@ -55,6 +55,7 @@ i{
   color: #00BCD4;
   margin-right: 0px;
   display: block;
+  background-color: #2EA681;
 }
 
 #cardContent{

@@ -42,6 +42,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { PublicacionesComponent } from './wall/publicaciones/publicaciones.component';
 import { PublicacionesService } from './services/publicaciones.service';
 import { AddPublishComponent } from './wall/add-publish/add-publish.component';
+import { AddTagComponent } from './wall/add-publish/add-tag/add-tag.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { AddPublishComponent } from './wall/add-publish/add-publish.component';
     SingWithGButtonComponent,
     CarrouselComponent,
     PublicacionesComponent,
-    AddPublishComponent
+    AddPublishComponent,
+    AddTagComponent
     
   ],
   imports: [

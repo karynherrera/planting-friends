@@ -46,7 +46,7 @@ export class PublicacionesComponent implements OnInit {
   }
   updateLikes(event, post: PublishInterface){ 
     this.pubService.giveLike(post);
-    this.clear();
+    
   }
 
   clear(){
