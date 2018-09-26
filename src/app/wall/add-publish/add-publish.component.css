@@ -38,12 +38,18 @@ formUser{
   margin: 5px;
 }
 
-input{
+.inputPub{
   border-radius: 10px;
   border-color: #A7D9A2;
   border-style: solid;
 }
 
+#inputUpload{
+  border: none;
+  text-align: center;
+  font-size: 15px;
+  margin: 10px;
+}
 
 p{
   text-align: center;
@@ -75,7 +81,6 @@ p{
 }
 
 
-
 .areaPublicaciones{
   background-color: #A7D9A2;
   border:none;
@@ -83,4 +88,34 @@ p{
   border-style: none;
   display:block;
   position: relative;
+}
+
+#add{
+  position: absolute;
+  top:50%;
+}
+
+#upload{
+  position: relative;
+  top: 40px;
+}
+
+i{
+  color: #00BCD4;
+  margin: 10px;
+  display: inline-flex;
+  margin-bottom: 20px;
+  
+  position: absolute;
+}
+
+.fa-image{
+  font-size: 33px;
+  
+}
+
+.fa-plus{
+  top:6px;
+  font-size: 27px;
+  right:-30px;
 }

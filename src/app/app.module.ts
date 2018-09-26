@@ -6,13 +6,12 @@ import{FormsModule} from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { WallComponent } from './wall/wall.component';
-
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { WelcomeComponent } from './welcome/welcome.component';
-
 import { AppComponent } from './app.component';
-
 import { AppRoutingModule } from './app-routing.module';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import {HttpClientModule} from '@angular/common/http';
 
 import { ReactiveFormsModule } from '@angular/forms'; //añadimos un formulario
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -76,7 +75,9 @@ import { AddImgComponent } from './wall/add-publish/add-img/add-img.component';
     MatCardModule,
     MatSnackBarModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    AngularFireStorageModule,
+    HttpClientModule
 
   ],
   providers: [AuthService, AngularFirestore, AuthGuard, PublicacionesService],

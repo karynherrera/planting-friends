@@ -1,201 +1,109 @@
-i{
-
+i {
   color: #00BCD4;
-
   margin: 10px;
-
   display: inline-flex;
-
   margin-bottom: 20px;
-
 }
 
-
-
-.fa-edit{
-
+.fa-edit {
   position: absolute;
-
   right: 6%;
-
 }
 
-
-
-#activeHeart{
-
+#activeHeart {
   color: red;
-
 }
 
-
-
-.fa-window-close{
-
+.fa-window-close {
   position: absolute;
-
   right: 5%;
-
 }
 
-
-
-.fa-trash{
-
+.fa-trash {
   position: absolute;
-
   right: 2%;
-
 }
 
-.fa-heart{
-
+.fa-heart {
   position: absolute;
   right: 10%;
 }
 
-
-
-.card{
-
+.card {
   background-color: white;
-
   border-radius: 10px;
-
   /* padding-bottom: 3%; */
-
   margin-top: 5%;
-
   padding-top: 1%;
-
   padding-right: 1%;
-
   padding-bottom: 1%;
-
 }
-
-
 
 .profileImg {
-
   height: 42px;
-
   width: 42px;
-
   float: left;
-
   border-radius: 50%;
-
   border-color: transparent;
-
   border-width: 0px;
-
   padding: 0px;
-
   margin-left: 5%;
-
 }
 
-.topPost{
+.topPost {
   background-color: #2EA681;
   width: 100%;
   height: 50px;
   border-radius: 10px;
 }
 
-#date{
-
+#date {
   float: right;
-
   font-size: small;
-
   color: white;
-
   margin-right: 0px;
-
   display: block;
-  
-
 }
 
-
-
-#cardContent{
-
+#cardContent {
   margin-top: 130px;
-
   padding: 5%;
-
 }
 
-
-
-#bottomInfo{
-
+#bottomInfo {
   padding-bottom: 0px;
-
 }
 
-#postMsg{
-
+#postMsg {
   display: block;
-
-  margin: 2%;  
-
+  margin: 2%;
   text-align: left;
-
   font-size: medium;
-
   margin-top: 6%;
-
   margin-bottom: 5%;
-
   margin-left: 5%;
-
 }
 
-#userName{
-
+#userName {
   padding-top: 1%;
-
   padding-left: 1%;
-
   color: green;
-
   font-family: 'Lobster', cursive;
-
   font-size: large;
 }
 
-
-
-.publicar{
-
+.publicar {
   text-align: center;
-
   background-color: #00BCD4;
-
   color: white;
-
   font-size: 15px;
-
   border-radius: 10px;
-
   margin-left: 5px;
-
   margin-top: 5%;
-
 }
 
-
-
-input{
-
+input {
   border-radius: 10px;
-
   border-color: #A7D9A2;
-
   border-style: solid;
-
 }
-
