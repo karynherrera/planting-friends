@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-add-tag',
@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-tag.component.css']
 })
 export class AddTagComponent implements OnInit {
-
+  @Output() onTagChoose: EventEmitter<any> = new EventEmitter<any>(); 
+  
   constructor() { }
 
   ngOnInit() {
   }
-
+  public saveTag(choosenTag: string): void { this.onTagChoose.emit(choosenTag); } 
+ 
 }

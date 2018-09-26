@@ -2,3 +2,9 @@
   height: 700px;
   width: 100%;
 }
+
+@media (min-width: 250px) and (max-width: 490px){
+  .imgCarrousel{
+    height: 300px;
+  }
+}

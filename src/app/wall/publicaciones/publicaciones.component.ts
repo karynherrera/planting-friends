@@ -34,7 +34,7 @@ export class PublicacionesComponent implements OnInit {
 
     this.pubService.getPublications().subscribe(publicacion=>{
 
-      console.log(publicacion);
+      // console.log(publicacion);
 
       this.posts = publicacion;
 
@@ -74,8 +74,7 @@ export class PublicacionesComponent implements OnInit {
     this.giveLike = post;
   }
   updateLikes(event, post: PublishInterface){ 
-    this.pubService.giveLike(post);
-    
+    this.pubService.giveLike(post);  
   }
 
 

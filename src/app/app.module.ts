@@ -81,7 +81,7 @@ import { AddImgComponent } from './wall/add-publish/add-img/add-img.component';
     FormsModule
 
   ],
-  providers: [AuthService, AngularFirestore, AuthGuard, PublicacionesService],
+  providers: [AuthService, AngularFirestore, AuthGuard, PublicacionesService, AddTagComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

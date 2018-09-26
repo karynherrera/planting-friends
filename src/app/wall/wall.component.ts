@@ -32,7 +32,7 @@ export class WallComponent implements OnInit {
     this.items = this.publishCollection.valueChanges();
     this.afAuth.authState.subscribe(user => {
       if(user) 
-      console.log(user.displayName); 
+        console.log(user.displayName); 
 
     });
   }
