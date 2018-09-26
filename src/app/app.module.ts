@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+﻿import { BrowserModule } from '@angular/platform-browser';
 
 import { NgModule } from '@angular/core';
 import{FormsModule} from '@angular/forms';
@@ -42,6 +42,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { PublicacionesComponent } from './wall/publicaciones/publicaciones.component';
 import { PublicacionesService } from './services/publicaciones.service';
 import { AddPublishComponent } from './wall/add-publish/add-publish.component';
+import { AddImgComponent } from './wall/add-publish/add-img/add-img.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { AddPublishComponent } from './wall/add-publish/add-publish.component';
     SingWithGButtonComponent,
     CarrouselComponent,
     PublicacionesComponent,
-    AddPublishComponent
+    AddPublishComponent,
+    AddImgComponent
     
   ],
   imports: [
