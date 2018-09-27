@@ -44,6 +44,7 @@ import { PublicacionesService } from './services/publicaciones.service';
 import { AddPublishComponent } from './wall/add-publish/add-publish.component';
 import { AddTagComponent } from './wall/add-publish/add-tag/add-tag.component';
 import { AddImgComponent } from './wall/add-publish/add-img/add-img.component';
+import { FilterComponent } from './wall/filter/filter.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { AddImgComponent } from './wall/add-publish/add-img/add-img.component';
     PublicacionesComponent,
     AddPublishComponent,
     AddTagComponent,
-    AddImgComponent
+    AddImgComponent,
+    FilterComponent
     
   ],
   imports: [
