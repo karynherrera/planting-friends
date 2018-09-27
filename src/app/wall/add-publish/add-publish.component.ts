@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
+import { ViewChild, ElementRef } from '@angular/core';
+
 import { PublicacionesService } from '../../services/publicaciones.service';
 import { PublishInterface } from '../../models/publishInterface';
 import {NgForm} from '@angular/forms/src/directives/ng_form';
@@ -32,9 +35,11 @@ export class AddPublishComponent implements OnInit {
     imgPublish: '',
   };
 
-
+  @ViewChild('myCanvas') myCanvas: ElementRef;
+  public context: CanvasRenderingContext2D;
+  
   constructor(private pubServicio: PublicacionesService, public afAuth: AngularFireAuth, private storage: AngularFireStorage, private tagComponent: AddTagComponent) { }
-
+  
   
   uploadPercent: Observable<number>;
   profileUrl: Observable<string | null>;
@@ -81,36 +86,84 @@ export class AddPublishComponent implements OnInit {
     this.selectedFile = event.target.files[0];
     let fileroot = this.selectedFile.name;
     let filePath;
-    const ref = this.storage.ref(filePath);
+    // intento mariel 
+    // subir archivo a la base de datos
+    const ref = this.storage.ref(fileroot);
     const task = this.storage.upload(fileroot, this.selectedFile);
-    this.uploadPercent= task.percentageChanges();
+    // const task = this.storage.upload(fileroot, this.selectedFile);
+    // esperar a que este cargado en la base de datos
     task.snapshotChanges().pipe(
-      finalize(() => {
-         this.downloadURL = ref.getDownloadURL()
-         this.downloadURL.subscribe(url=>{
-          const gsUrl = firebase.storage().refFromURL(url).toString();
-          console.log(gsUrl);
-          this.urlColection = gsUrl;
-         })
-        })
-   )
-  .subscribe()
-    //const donwloadURL = task.downloadURL();
-    //console.log(this.selectedFile.name);root
-    
-  }
-  
-  getUrl(filePath){
-    let urlImg;
-     const ref = this.storage.ref(filePath);
+        finalize(() => {
+           // obtener url correcta para subir a la coleccion 
      this.profileUrl = ref.getDownloadURL();
      this.profileUrl.subscribe(url=>{
-       urlImg=url
-       console.log(urlImg);
-       const gsUrl = firebase.storage().refFromURL(urlImg).toString();
-       console.log(gsUrl);
-       this.urlColection = gsUrl;
-      })
+       // crear imagen en la memoria para dibujarla en canvas
+       const myImage = new Image();
+       myImage.src = url;
+       // console.log('myImg' + myImage);
+       const imgPlace = document.getElementById('place_img');
+       this.urlColection = myImage.src;
+       // esta es la url que sirve
+      // const url64 = this.getBase64Image(myImage); 
+      // console.log('url64'+ url64);
+      
+          })
+        })
+    ).subscribe()
+ 
+  //   this.uploadPercent= task.percentageChanges();
+  //   task.snapshotChanges().pipe(
+  //     finalize(() => {
+  //        this.downloadURL = ref.getDownloadURL()
+  //        this.downloadURL.subscribe(url=>{
+  //         const gsUrl = firebase.storage().refFromURL(url).toString();
+  //         console.log(gsUrl);
+  //         this.urlColection = gsUrl;
+  //        })
+  //       })
+  //  )
+  // .subscribe()
+  //   //const donwloadURL = task.downloadURL();
+  //   //console.log(this.selectedFile.name);root
+    
+  }
+
+  // getBase64Image(img) {
+  //   const canvas =  <HTMLCanvasElement>this.myCanvas.nativeElement;
+  //   this.context = (<HTMLCanvasElement>this.myCanvas.nativeElement).getContext('2d');
+  //   this.context.drawImage(img, 0, 0);
+  //   var dataURL = canvas.toDataURL();
+  //   return dataURL;
+  // }
+  
+
+//   const gsUrl = firebase.storage().refFromURL(url).toString();
+//   // pasar la url a la coleccion 
+//   // Create a child reference
+//   const imagesRef = ref.child(fileroot);
+//   // subir esta url 
+//  // pasarle la url directo 
+ 
+//  // this.urlColection = JSON.stringify(url);
+//  console.log(JSON.stringify(gsUrl));
+ 
+//  const message = JSON.stringify(gsUrl);
+//  imagesRef.putString(message).then(function(snapshot) {
+//      console.log('Uploaded a raw string!');
+//    });
+//  })
+  
+  // getUrl(filePath){
+  //   let urlImg;
+  //    const ref = this.storage.ref(filePath);
+  //    this.profileUrl = ref.getDownloadURL();
+  //    this.profileUrl.subscribe(url=>{
+  //      urlImg=url
+  //      console.log(urlImg);
+  //      const gsUrl = firebase.storage().refFromURL(urlImg).toString();
+  //      console.log(gsUrl);
+  //      this.urlColection = gsUrl;
+  //     })
       
      //console.log(ref);
     //let stRef = firebase.storage().ref();
@@ -142,6 +195,6 @@ export class AddPublishComponent implements OnInit {
     //const gsUrl = firebase.storage().refFromUrl(downloadUrl).toString();
   }
   
-  }
+  
     
 
