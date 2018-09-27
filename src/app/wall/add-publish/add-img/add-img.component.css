@@ -1,0 +1,24 @@
+#add{
+  position: absolute;
+  top:50%;
+}
+
+i{
+  color: #00BCD4;
+  margin: 10px;
+  display: inline-flex;
+  margin-bottom: 20px;
+  
+  position: absolute;
+}
+
+.fa-image{
+  font-size: 33px;
+  
+}
+
+.fa-plus{
+  top:4px;
+  font-size: 27px;
+  right:-80px;
+}

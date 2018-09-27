@@ -4,7 +4,15 @@ import { PublishInterface } from '../../models/publishInterface';
 import {NgForm} from '@angular/forms/src/directives/ng_form';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 import { AddTagComponent } from './add-tag/add-tag.component';
+
+import { finalize } from 'rxjs/operators';
+import { AngularFireStorage } from '@angular/fire/storage';
+import { Observable } from 'rxjs';
+import * as firebase from 'firebase';
+
+
 
 @Component({
   selector: 'app-add-publish',
@@ -19,10 +27,17 @@ export class AddPublishComponent implements OnInit {
     name:'',
     photoUrl: '',
     likeCounter:0,
-    tag:''
+
+    tag:'',
+
+    imgPublish: '',
   };
-  
-  constructor(private pubServicio: PublicacionesService, public afAuth: AngularFireAuth, private tagComponent: AddTagComponent) { }
+
+  constructor(private pubServicio: PublicacionesService, public afAuth: AngularFireAuth, private storage: AngularFireStorage private tagComponent: AddTagComponent) { }
+  uploadPercent: Observable<number>;
+  downloadURL: Observable<string>;
+  selectedFile = null;
+
 
   ngOnInit() {
   }
@@ -39,15 +54,57 @@ export class AddPublishComponent implements OnInit {
         let time = new Date().getTime();
         let date = new Date(time).toLocaleString();
         let name = user.displayName;
+        let img = 'img';
         let photo = user.photoURL;
         this.publicacion.date = date;
         this.publicacion.name = name;
         this.publicacion.photoUrl = photo;
+       
         //this.pubServicio.addPublish(this.publicacion);
         this.pubServicio.addPublish(this.publicacion);
       } 
     });
   }
 
+ addImg(event) {
+    let i = 0;
+    this.uploadImg(event, i);
+    }
+
+  uploadImg(event,i){
+    i++;
+    //console.log(event);
+    this.selectedFile = event.target.files[0];
+    const filePath = this.selectedFile.name;
+    const task = this.storage.upload(filePath, this.selectedFile);
+    //console.log(this.selectedFile.name);
+
+    let stRef = firebase.storage().ref();
+    let imgRef = stRef.child('imgs');
+
+    let spaceRef = imgRef.child(filePath);
+    let path = spaceRef.fullPath;
+    let name = spaceRef.name;
+    let imagesRef = spaceRef.parent;
+
+    stRef.child(filePath).getDownloadURL().then(function(url) {
+      // `url` is the download URL for 'images/stars.jpg'
+    
+      // Or inserted into an <img> element:
+      var img = document.getElementById('myimg');
+      console.log(url);
+      this.publicacion.imgPublish = url;
+    }).catch(function(error) {
+      // Handle any errors
+    });
+    //console.log(imagesRef);
+    //let imagenUrl= this.storage.ref(filePath).getDownloadURL;
+    //console.log(imagenUrl);
+    //const ref = this.storage.ref(filePath);
+    //const task2 = ref.put(this.selectedFile);
+    //console.log(task2);
+  }
+
+  }
   
-}
+

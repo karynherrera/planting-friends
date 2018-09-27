@@ -6,4 +6,5 @@ export interface PublishInterface{
   photoUrl?:string;
   likeCounter?:number;
   tag?:string;
+  imgPublish?:any;
 }
