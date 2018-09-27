@@ -4,11 +4,15 @@ import { PublishInterface } from '../../models/publishInterface';
 import {NgForm} from '@angular/forms/src/directives/ng_form';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+import { AddTagComponent } from './add-tag/add-tag.component';
+
 import { finalize } from 'rxjs/operators';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { Observable } from 'rxjs';
 import * as firebase from 'firebase';
 import { ngfactoryFilePath } from '@angular/compiler/src/aot/util';
+
 
 
 @Component({
@@ -24,20 +28,31 @@ export class AddPublishComponent implements OnInit {
     name:'',
     photoUrl: '',
     likeCounter:0,
+
+    tag:'',
+
     imgPublish: '',
   };
 
-  constructor(public pubServicio: PublicacionesService, public afAuth: AngularFireAuth, public storage: AngularFireStorage) { }
+
+  constructor(private pubServicio: PublicacionesService, public afAuth: AngularFireAuth, private storage: AngularFireStorage private tagComponent: AddTagComponent) { }
+
+  
   uploadPercent: Observable<number>;
   profileUrl: Observable<string | null>;
   downloadURL: Observable<string>;
   selectedFile = null;
   filePath: string;
 
+
   ngOnInit() {
   }
-
-  //validar que no este vacio para postear
+  
+  // traer informacion del componente hijo add-tag
+  public saveTag(choosenTag: string):void { 
+    console.log('Tag: ', choosenTag); 
+    this.publicacion.tag = choosenTag;
+  } 
  
   newPublish(myForm: NgForm) {
     this.afAuth.authState.subscribe(user => {

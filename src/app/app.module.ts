@@ -41,6 +41,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { PublicacionesComponent } from './wall/publicaciones/publicaciones.component';
 import { PublicacionesService } from './services/publicaciones.service';
 import { AddPublishComponent } from './wall/add-publish/add-publish.component';
+import { AddTagComponent } from './wall/add-publish/add-tag/add-tag.component';
 import { AddImgComponent } from './wall/add-publish/add-img/add-img.component';
 
 @NgModule({
@@ -56,6 +57,7 @@ import { AddImgComponent } from './wall/add-publish/add-img/add-img.component';
     CarrouselComponent,
     PublicacionesComponent,
     AddPublishComponent,
+    AddTagComponent,
     AddImgComponent
     
   ],
@@ -80,7 +82,7 @@ import { AddImgComponent } from './wall/add-publish/add-img/add-img.component';
     HttpClientModule
 
   ],
-  providers: [AuthService, AngularFirestore, AuthGuard, PublicacionesService],
+  providers: [AuthService, AngularFirestore, AuthGuard, PublicacionesService, AddTagComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
