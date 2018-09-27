@@ -8,6 +8,7 @@ import { finalize } from 'rxjs/operators';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { Observable } from 'rxjs';
 import * as firebase from 'firebase';
+import { ngfactoryFilePath } from '@angular/compiler/src/aot/util';
 
 
 @Component({
@@ -26,10 +27,12 @@ export class AddPublishComponent implements OnInit {
     imgPublish: '',
   };
 
-  constructor(private pubServicio: PublicacionesService, public afAuth: AngularFireAuth, private storage: AngularFireStorage) { }
+  constructor(public pubServicio: PublicacionesService, public afAuth: AngularFireAuth, public storage: AngularFireStorage) { }
   uploadPercent: Observable<number>;
+  profileUrl: Observable<string | null>;
   downloadURL: Observable<string>;
   selectedFile = null;
+  filePath: string;
 
   ngOnInit() {
   }
@@ -47,42 +50,41 @@ export class AddPublishComponent implements OnInit {
         this.publicacion.date = date;
         this.publicacion.name = name;
         this.publicacion.photoUrl = photo;
-       
+        //this.publicacion.imgPublish= this.getUrl(this.filePath);
         //this.pubServicio.addPublish(this.publicacion);
         this.pubServicio.addPublish(this.publicacion);
       } 
     });
   }
 
- addImg(event) {
-    let i = 0;
-    this.uploadImg(event, i);
-    }
+ 
 
-  uploadImg(event,i){
-    i++;
+  addImg(event){
     //console.log(event);
     this.selectedFile = event.target.files[0];
-    const filePath = this.selectedFile.name;
-    const task = this.storage.upload(filePath, this.selectedFile);
+    const fileroot = this.selectedFile.name;
+    const task = this.storage.upload(fileroot, this.selectedFile);
     //console.log(this.selectedFile.name);
-
+    this.filePath = fileroot;
+    this.getUrl(fileroot);
+  }
+  
+  getUrl(filePath){
+    let urlImg;
     let stRef = firebase.storage().ref();
     let imgRef = stRef.child('imgs');
-
-    let spaceRef = imgRef.child(filePath);
-    let path = spaceRef.fullPath;
-    let name = spaceRef.name;
-    let imagesRef = spaceRef.parent;
-
+    let path = 'imgs/'+filePath;
+    console.log(path);
     stRef.child(filePath).getDownloadURL().then(function(url) {
-      // `url` is the download URL for 'images/stars.jpg'
-    
-      // Or inserted into an <img> element:
-      var img = document.getElementById('myimg');
+      urlImg = url;
       console.log(url);
-      this.publicacion.imgPublish = url;
+      const ref = this.storage.ref(`imgs/${filePath}`);
+      this.profileUrl = ref.getDownloadURL();
+      console.log(ref.getDownloadURL());
+       //return console.log(urlImg);
+       //return urlImg;
     }).catch(function(error) {
+      console.log(error);
       // Handle any errors
     });
     //console.log(imagesRef);
@@ -91,8 +93,9 @@ export class AddPublishComponent implements OnInit {
     //const ref = this.storage.ref(filePath);
     //const task2 = ref.put(this.selectedFile);
     //console.log(task2);
-  }
-
+    
   }
   
+  }
+    
 
