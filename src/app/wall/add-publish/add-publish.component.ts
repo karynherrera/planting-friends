@@ -72,13 +72,13 @@ export class AddPublishComponent implements OnInit {
         this.publicacion.date = date;
         this.publicacion.name = name;
         this.publicacion.photoUrl = photo;
+
         //this.pubServicio.addPublish(this.publicacion);
         this.pubServicio.addPublish(this.publicacion);
       } 
     });
   }
 
- 
 
   addImg(event){
     //console.log(event);
