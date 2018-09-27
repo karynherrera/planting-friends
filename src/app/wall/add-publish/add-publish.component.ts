@@ -67,22 +67,22 @@ export class AddPublishComponent implements OnInit {
         this.publicacion.date = date;
         this.publicacion.name = name;
         this.publicacion.photoUrl = photo;
-        this.publicacion.imgPublish= this.urlColection;
+        //this.publicacion.imgPublish= this.urlColection;
         //this.pubServicio.addPublish(this.publicacion);
         this.pubServicio.addPublish(this.publicacion);
       } 
     });
   }
 
- 
 
   addImg(event){
     //console.log(event);
     this.selectedFile = event.target.files[0];
     let fileroot = this.selectedFile.name;
     let filePath;
-    const ref = this.storage.ref(filePath);
-    const task = this.storage.upload(fileroot, this.selectedFile);
+    let path = 'imgs/'+filePath;
+    const ref = this.storage.ref(path);
+    const task = this.storage.upload(filePath, this.selectedFile);
     this.uploadPercent= task.percentageChanges();
     task.snapshotChanges().pipe(
       finalize(() => {

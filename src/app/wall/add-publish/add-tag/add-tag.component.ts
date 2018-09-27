@@ -12,6 +12,7 @@ export class AddTagComponent implements OnInit {
 
   ngOnInit() {
   }
+  
   public saveTag(choosenTag: string): void { this.onTagChoose.emit(choosenTag); } 
  
 }
