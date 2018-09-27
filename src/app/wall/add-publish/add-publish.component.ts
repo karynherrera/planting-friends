@@ -28,21 +28,23 @@ export class AddPublishComponent implements OnInit {
     name:'',
     photoUrl: '',
     likeCounter:0,
-
     tag:'',
-
     imgPublish: '',
   };
 
 
-  constructor(private pubServicio: PublicacionesService, public afAuth: AngularFireAuth, private storage: AngularFireStorage private tagComponent: AddTagComponent) { }
+  constructor(private pubServicio: PublicacionesService, public afAuth: AngularFireAuth, private storage: AngularFireStorage, private tagComponent: AddTagComponent) { }
 
   
   uploadPercent: Observable<number>;
   profileUrl: Observable<string | null>;
   downloadURL: Observable<string>;
+  task: Observable<string>;
   selectedFile = null;
   filePath: string;
+  fileroot: string;
+  urlColection: string;
+  
 
 
   ngOnInit() {
@@ -65,7 +67,7 @@ export class AddPublishComponent implements OnInit {
         this.publicacion.date = date;
         this.publicacion.name = name;
         this.publicacion.photoUrl = photo;
-        //this.publicacion.imgPublish= this.getUrl(this.filePath);
+        this.publicacion.imgPublish= this.urlColection;
         //this.pubServicio.addPublish(this.publicacion);
         this.pubServicio.addPublish(this.publicacion);
       } 
@@ -77,23 +79,49 @@ export class AddPublishComponent implements OnInit {
   addImg(event){
     //console.log(event);
     this.selectedFile = event.target.files[0];
-    const fileroot = this.selectedFile.name;
+    let fileroot = this.selectedFile.name;
+    let filePath;
+    const ref = this.storage.ref(filePath);
     const task = this.storage.upload(fileroot, this.selectedFile);
-    //console.log(this.selectedFile.name);
-    this.filePath = fileroot;
-    this.getUrl(fileroot);
+    this.uploadPercent= task.percentageChanges();
+    task.snapshotChanges().pipe(
+      finalize(() => {
+         this.downloadURL = ref.getDownloadURL()
+         this.downloadURL.subscribe(url=>{
+          const gsUrl = firebase.storage().refFromURL(url).toString();
+          console.log(gsUrl);
+          this.urlColection = gsUrl;
+         })
+        })
+   )
+  .subscribe()
+    //const donwloadURL = task.downloadURL();
+    //console.log(this.selectedFile.name);root
+    
   }
   
   getUrl(filePath){
     let urlImg;
-    let stRef = firebase.storage().ref();
-    let imgRef = stRef.child('imgs');
-    let path = 'imgs/'+filePath;
-    console.log(path);
-    stRef.child(filePath).getDownloadURL().then(function(url) {
+     const ref = this.storage.ref(filePath);
+     this.profileUrl = ref.getDownloadURL();
+     this.profileUrl.subscribe(url=>{
+       urlImg=url
+       console.log(urlImg);
+       const gsUrl = firebase.storage().refFromURL(urlImg).toString();
+       console.log(gsUrl);
+       this.urlColection = gsUrl;
+      })
+      
+     //console.log(ref);
+    //let stRef = firebase.storage().ref();
+    //let imgRef = stRef.child('imgs');
+    //let path = 'imgs/'+filePath;
+    //console.log(path);
+    /*
+    storage.child(filePath).getDownloadURL().then(function(url) {
       urlImg = url;
       console.log(url);
-      const ref = this.storage.ref(`imgs/${filePath}`);
+      const ref = this.storage.ref(`${filePath}`);
       this.profileUrl = ref.getDownloadURL();
       console.log(ref.getDownloadURL());
        //return console.log(urlImg);
@@ -102,6 +130,7 @@ export class AddPublishComponent implements OnInit {
       console.log(error);
       // Handle any errors
     });
+    */
     //console.log(imagesRef);
     //let imagenUrl= this.storage.ref(filePath).getDownloadURL;
     //console.log(imagenUrl);
@@ -109,6 +138,8 @@ export class AddPublishComponent implements OnInit {
     //const task2 = ref.put(this.selectedFile);
     //console.log(task2);
     
+    //const downloadUrl = "https://firestorage.googleapis...";
+    //const gsUrl = firebase.storage().refFromUrl(downloadUrl).toString();
   }
   
   }
