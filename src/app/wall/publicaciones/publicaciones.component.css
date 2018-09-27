@@ -1,4 +1,7 @@
-i{
+
+
+i {
+
   color: #00BCD4;
   margin: 10px;
   display: inline-flex;
@@ -7,10 +10,13 @@ i{
 
 
 
-.fa-edit{
+
+
+.fa-edit {
   position: absolute;
   right: 6%;
 }
+
 
 
 
@@ -18,28 +24,31 @@ i{
   color: red;
 }
 
+.fa-window-close {
 
-
-.fa-window-close{
   position: absolute;
   right: 5%;
 }
 
 
 
-.fa-trash{
+
+
+.fa-trash {
+
   position: absolute;
   right: 2%;
 }
 
-.fa-heart{
+
+.fa-heart {
+
   position: absolute;
   right: 10%;
 }
 
+.card {
 
-
-.card{
   background-color: white;
   border-radius: 10px;
   /* padding-bottom: 3%; */
@@ -48,8 +57,6 @@ i{
   padding-right: 1%;
   padding-bottom: 1%;
 }
-
-
 
 .profileImg {
   height: 42px;
@@ -62,14 +69,15 @@ i{
   margin-left: 5%;
 }
 
-.topPost{
+.topPost {
   background-color: #2EA681;
   width: 100%;
   height: 50px;
   border-radius: 10px;
 }
 
-#date{
+
+#date {
   float: right;
   font-size: small;
   color: white;
@@ -78,11 +86,12 @@ i{
 }
 
 
+#cardContent {
 
-#cardContent{
   margin-top: 130px;
   padding: 5%;
 }
+
 
 
 
@@ -90,18 +99,24 @@ i{
   padding-bottom: 0px;
 }
 
-#postMsg{
+
+#bottomInfo {
+  padding-bottom: 0px;
+}
+
+#postMsg {
   display: block;
-  margin: 2%;  
+  margin: 2%;
   text-align: left;
   font-size: medium;
   margin-top: 6%;
   margin-bottom: 5%;
   margin-left: 5%;
-
 }
 
-#userName{
+
+#userName {
+
   padding-top: 1%;
   padding-left: 1%;
   color: green;
@@ -110,8 +125,8 @@ i{
 }
 
 
+.publicar {
 
-.publicar{
   text-align: center;
   background-color: #00BCD4;
   color: white;
@@ -120,6 +135,7 @@ i{
   margin-left: 5px;
   margin-top: 5%;
 }
+
 
 
 
@@ -134,3 +150,7 @@ input{
   padding-top: 0%;
   padding-bottom: 0%;
 }
+
+
+
+

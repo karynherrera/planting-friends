@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PublishInterface } from '../../../models/publishInterface';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-add-img',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddImgComponent implements OnInit {
 
-  constructor() { }
+  constructor(public afAuth: AngularFireAuth) { }
 
   ngOnInit() {
   }
+
 
 }
