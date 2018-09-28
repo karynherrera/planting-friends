@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PublishInterface } from '../../models/publishInterface';
 import { PublicacionesService } from '../../services/publicaciones.service';
+
 @Component({
 selector: 'app-publicaciones',
 templateUrl: './publicaciones.component.html',
@@ -14,6 +15,8 @@ isEditPost: Boolean = false;
 editPost: PublishInterface;
 isGiveLike: Boolean = false;
 giveLike: PublishInterface;
+filterPublish: string;
+
 constructor(public pubService: PublicacionesService) { }
 ngOnInit() {
 this.pubService.getPublications().subscribe(publicacion=>{
@@ -45,6 +48,10 @@ this.clear();
 clear(){
 this.isEditPost = false;
 this.editPost = null;
+}
+
+uploadImg(){
+  
 }
 
 }

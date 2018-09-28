@@ -118,3 +118,7 @@ input {
   padding-bottom: 0%;
   border:none;
 }
+#filterNav{
+  position: relative;
+  width: 100vw;
+}

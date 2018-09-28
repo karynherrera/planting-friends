@@ -59,4 +59,8 @@ export class PublicacionesService {
 
   }
 
+  filter(tag: string){
+    console.log(this.afs.doc(`publications/`).get);
+  }
+
 }

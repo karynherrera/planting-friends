@@ -28,7 +28,7 @@ import { SingWithGButtonComponent } from './login/sing-with-g-button/sing-with-g
 import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from "@angular/fire/database";
-import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreModule} from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire';
 
 import { AuthService } from './auth.service';
@@ -81,7 +81,7 @@ import { FilterComponent } from './wall/filter/filter.component';
     NgbModule,
     FormsModule,
     AngularFireStorageModule,
-    HttpClientModule
+   
 
   ],
   providers: [AuthService, AngularFirestore, AuthGuard, PublicacionesService, AddTagComponent],

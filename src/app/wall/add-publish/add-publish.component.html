@@ -1,14 +1,15 @@
   
-  <form (ngSubmit)="newPublish(formNew)" #formNew="ngForm" > 
+  <form (ngSubmit)="newPublish(formNew)" #formNew="ngForm" onsubmit="this.reset()" > 
     <div class='formUser'>
       <input [(ngModel)]="publicacion.publish" class="inputPub" #publish="ngModel" type='text' name ="publish" id="publish" placeholder="¿Que quieres Publicar?">
     <button mat-button type="submit" class='publicar'>Publicar!</button>
     <app-add-tag (onTagChoose)="saveTag($event)"></app-add-tag>
     </div>
-    <div id="add">
-      <i class="far fa-image"></i>
+    <div id="add" *ngIf="iconImg === true" >
+      <i class="far fa-image" (click)="upImg()" > <i class="fas fa-plus"(click)="upImg()"></i></i>
     </div>
-    <div id="upload">
-        <input type="file" (change)="addImg($event)" id="inputUpload"> <i class="fas fa-plus"></i>
+    <div id="upload" *ngIf="isUploadImg === true">
+        <input type="file" (change)="addImg($event)" id="inputUpload"><i class="fas fa-times" (click)="close()"></i>
     </div>
   </form>
+  

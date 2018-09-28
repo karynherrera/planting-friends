@@ -72,6 +72,7 @@ p{
   position: absolute;
   right: 25%;
   display: block;
+  padding-bottom: 0%;
 }
 
 .btn-blue{
@@ -92,12 +93,14 @@ p{
 
 #add{
   position: absolute;
-  top:50%;
+  top:48%;
+  left: 25% ;
+  
 }
 
 #upload{
   position: relative;
-  top: 40px;
+  text-align: center;
 }
 
 i{
@@ -105,8 +108,8 @@ i{
   margin: 10px;
   display: inline-flex;
   margin-bottom: 20px;
-  
   position: absolute;
+  
 }
 
 .fa-image{
@@ -115,7 +118,7 @@ i{
 }
 
 .fa-plus{
-  top:6px;
-  font-size: 27px;
-  right:-30px;
+  top:-5px;
+  font-size: 25px;
+  right:-40px;
 }

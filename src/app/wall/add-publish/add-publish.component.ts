@@ -6,15 +6,11 @@ import { PublicacionesService } from '../../services/publicaciones.service';
 import { PublishInterface } from '../../models/publishInterface';
 import {NgForm} from '@angular/forms/src/directives/ng_form';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
 import { AddTagComponent } from './add-tag/add-tag.component';
-
 import { finalize } from 'rxjs/operators';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { Observable } from 'rxjs';
-import * as firebase from 'firebase';
-import { ngfactoryFilePath } from '@angular/compiler/src/aot/util';
+
 
 
 
@@ -49,8 +45,9 @@ export class AddPublishComponent implements OnInit {
   filePath: string;
   fileroot: string;
   urlColection: string;
-  
-
+  isUploadImg: Boolean = false;
+  iconImg:Boolean = true;
+  isclose:Boolean = false;
 
   ngOnInit() {
   }
@@ -61,7 +58,21 @@ export class AddPublishComponent implements OnInit {
     this.publicacion.tag = choosenTag;
   } 
  
+  upImg(){
+    console.log('up');
+    this.isUploadImg = true;
+    this.iconImg = false;
+    this.isclose = false;
+  }
+
+  close(){
+    this.iconImg = true;
+    this.isUploadImg = false;
+  }
+
   newPublish(myForm: NgForm) {
+    this.iconImg = true;
+    this.isUploadImg = false;
     this.afAuth.authState.subscribe(user => {
       if(user){
         let time = new Date().getTime();
@@ -77,6 +88,7 @@ export class AddPublishComponent implements OnInit {
         this.pubServicio.addPublish(this.publicacion);
       } 
     });
+    
   }
 
 
