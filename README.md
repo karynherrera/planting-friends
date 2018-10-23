@@ -2,10 +2,12 @@
 
 Desarrollo de una red social enfocada en el cuidado del medio ambiente, y está basada en la creciente necesidad que se ha generado en la sociedad para cuidar el planeta.
 
-![Red Social](https://user-images.githubusercontent.com/29713378/47374688-f0ff5700-d6c4-11e8-9e73-242b9dac56f9.png)
+![Red Social](https://user-images.githubusercontent.com/29713378/47375143-f7420300-d6c5-11e8-83d2-8787cd9701a6.png)
 
 :computer: Desarrollado para 
 [Laboratoria](https://github.com/Laboratoria)
+
+
 <img src="/src/assets/img/new_logo2.png" width="1000">
 
 El objetivo principal de esta aplicación es que aquellas personas que tengan interés en temas medioambientales puedan conocer a más gente que comparta sus mismos intereses, y se puedan generar instancias para compartir información, y así se puedan reunir y realizar actividades para generar conciencia en su entorno, ya sea que estén recién iniciandose en este tema, como también puede que tengan profesiones afines y que quieran aportar hacia la sociedad con su conocimiento en distintos temas como desarrollo de huertos urbanos, agricultura orgánica, compostaje, lombricultura, reciclaje, energías renovables, calentamiento global, etc .
