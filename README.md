@@ -4,7 +4,7 @@ Desarrollo de una red social enfocada en el cuidado del medio ambiente, y está 
 
 ![Red Social](https://user-images.githubusercontent.com/29713378/47376258-85b78400-d6c8-11e8-8c01-64e62fff5dc4.png)
 
-# Desarrollado para 
+## Desarrollado para 
 [Laboratoria](https://github.com/Laboratoria)
 
 
