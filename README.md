@@ -2,7 +2,7 @@
 
 Desarrollo de una red social enfocada en el cuidado del medio ambiente, y está basada en la creciente necesidad que se ha generado en la sociedad para cuidar el planeta.
 
-![Red Social](https://user-images.githubusercontent.com/29713378/47375143-f7420300-d6c5-11e8-83d2-8787cd9701a6.png)
+![Red Social](https://user-images.githubusercontent.com/29713378/47376258-85b78400-d6c8-11e8-8c01-64e62fff5dc4.png)
 
 :computer: Desarrollado para 
 [Laboratoria](https://github.com/Laboratoria)
