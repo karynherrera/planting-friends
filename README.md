@@ -1,10 +1,10 @@
 # Planting-Friends
 
-Desarrollo de una red social enfocada en el cuidado del medio ambiente, y está basada en la creciente necesidad que se ha generado en la sociedad para cuidar el planeta.
+Desarrollo de una red social enfocada en el cuidado del medio ambiente, y está basada en la creciente necesidad que se ha generado en la sociedad para cuidar el planeta. La app esta desarrollada en Angular6 con autenticacion en firebase, base de datos en firebase firestore y alojamiento de datos en firebase storage.
 
 ![Red Social](https://user-images.githubusercontent.com/29713378/47376258-85b78400-d6c8-11e8-8c01-64e62fff5dc4.png)
 
-:computer: Desarrollado para 
+# Desarrollado para 
 [Laboratoria](https://github.com/Laboratoria)
 
 
