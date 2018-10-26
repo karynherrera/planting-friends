@@ -98,7 +98,7 @@ https://angularfirebase.com/lessons/google-user-auth-with-firestore-custom-data/
 
 **Angular Bootstrap**
 
-https://ng-bootstrap.github.io/#/getting-started 
+https://ng-bootstrap.github.io/getting-started 
 
 ## Planificación del proyecto🛠️
 
